@@ -1,0 +1,3056 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blue Label Distribution Agreement</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5D5CDE',
+            secondary: '#0052CC',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200 transition-colors duration-200">
+  <div class="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
+    <!-- Header -->
+    <div class="flex flex-col sm:flex-row items-center justify-between mb-6 border-b border-gray-200 dark:border-gray-700 pb-6">
+      <div class="text-center sm:text-left mb-4 sm:mb-0">
+        <h1 class="text-2xl sm:text-3xl font-bold">Blue Label Distribution Agreement</h1>
+        <p class="text-gray-600 dark:text-gray-400 mt-1">Digital Onboarding Form</p>
+      </div>
+      <div class="flex justify-center">
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTAwIiBmaWxsPSJub25lIiAvPgogICAgPHRleHQgeD0iMjAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LXNpemU9IjI0IiBmaWxsPSIjMDA1MkNDIiBjbGFzcz0ibGlnaHQtb25seSI+Qmx1ZSBMYWJlbDwvdGV4dD4KICAgIDx0ZXh0IHg9IjIwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXdlaWdodD0iYm9sZCIgZm9udC1zaXplPSIyNCIgZmlsbD0id2hpdGUiIGNsYXNzPSJkYXJrLW9ubHkiPkJsdWUgTGFiZWw8L3RleHQ+CiAgICA8c3R5bGU+CiAgICAgICAgQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogZGFyaykgewogICAgICAgICAgICAubGlnaHQtb25seSB7IGRpc3BsYXk6IG5vbmU7IH0KICAgICAgICB9CiAgICAgICAgQG1lZGlhIChwcmVmZXJzLWNvbG9yLXNjaGVtZTogbGlnaHQpIHsKICAgICAgICAgICAgLmRhcmstb25seSB7IGRpc3BsYXk6IG5vbmU7IH0KICAgICAgICB9CiAgICA8L3N0eWxlPgo8L3N2Zz4=" alt="Blue Label Logo" class="h-16">
+      </div>
+    </div>
+
+    <!-- Progress Indicator -->
+    <div class="mb-8">
+      <div class="flex justify-between">
+        <div id="step1-indicator" class="flex flex-col items-center cursor-pointer" onclick="tryChangeStep(1)">
+          <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center">1</div>
+          <p class="mt-2 text-sm">Business Information</p>
+        </div>
+        <div class="flex-1 border-t border-gray-300 dark:border-gray-700 self-center mx-2"></div>
+        <div id="step2-indicator" class="flex flex-col items-center cursor-pointer" onclick="tryChangeStep(2)">
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400 flex items-center justify-center">2</div>
+          <p class="mt-2 text-sm">Account Details</p>
+        </div>
+        <div class="flex-1 border-t border-gray-300 dark:border-gray-700 self-center mx-2"></div>
+        <div id="step3-indicator" class="flex flex-col items-center cursor-pointer" onclick="tryChangeStep(3)">
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400 flex items-center justify-center">3</div>
+          <p class="mt-2 text-sm">Services</p>
+        </div>
+        <div class="flex-1 border-t border-gray-300 dark:border-gray-700 self-center mx-2"></div>
+        <div id="step4-indicator" class="flex flex-col items-center cursor-pointer" onclick="tryChangeStep(4)">
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400 flex items-center justify-center">4</div>
+          <p class="mt-2 text-sm">Terms & Conditions</p>
+        </div>
+        <div class="flex-1 border-t border-gray-300 dark:border-gray-700 self-center mx-2"></div>
+        <div id="step5-indicator" class="flex flex-col items-center cursor-pointer" onclick="tryChangeStep(5)">
+          <div class="w-10 h-10 rounded-full bg-gray-300 dark:bg-gray-700 text-gray-600 dark:text-gray-400 flex items-center justify-center">5</div>
+          <p class="mt-2 text-sm">Preview</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="formContainer">
+      <!-- Step 1: Business Information -->
+      <div id="step1" class="mb-8">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold mb-1">Business Information</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Please complete the business information form</p>
+        </div>
+        
+        <div class="space-y-6">
+          <!-- Header section -->
+          <div class="border border-gray-300 dark:border-gray-700 rounded-md overflow-hidden mb-2">
+            <div class="p-3 border-b border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+              <p class="text-sm font-medium text-gray-700 dark:text-gray-300">FOR OFFICE USE ONLY</p>
+              <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">This section should be completed by Blue Label Distribution staff</p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div class="p-3 border-r border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                <p class="text-sm font-medium">BRANCH</p>
+                <input type="text" class="w-full mt-1 p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div class="p-3 border-b border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                <p class="text-sm font-medium">INSTALLATION DATE</p>
+                <input type="date" class="w-full mt-1 p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                <p class="text-sm font-medium">AREA</p>
+                <input type="text" class="w-full mt-1 p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div class="p-3 bg-white dark:bg-gray-900">
+                <p class="text-sm font-medium">REP</p>
+                <input type="text" class="w-full mt-1 p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Outlet Information -->
+          <div class="border border-gray-300 dark:border-gray-700 rounded-md overflow-hidden">
+            <div class="grid grid-cols-1 gap-4">
+              <!-- Trading name -->
+              <div class="grid grid-cols-1 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Trading name of outlet</label>
+                  <input type="text" name="tradingName" id="tradingName" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+              </div>
+              
+              <!-- Registered name -->
+              <div class="grid grid-cols-1 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Registered name of outlet</label>
+                  <input type="text" name="businessName" id="businessName" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+              </div>
+              
+              <!-- Company registration details -->
+              <div class="grid grid-cols-2 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Company registration number</label>
+                  <input type="text" name="regNumber" id="regNumber" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Date of Establishment</label>
+                  <input type="date" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+              </div>
+              
+              <!-- Type of business -->
+              <div class="grid grid-cols-6 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Type of business</label>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="sole" name="businessType" value="Sole Proprietor" class="mr-2">
+                    <label for="sole" class="text-sm">Sole Proprietor</label>
+                  </div>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="partnership" name="businessType" value="Partnership" class="mr-2">
+                    <label for="partnership" class="text-sm">Partnership</label>
+                  </div>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="cc" name="businessType" value="CC" class="mr-2">
+                    <label for="cc" class="text-sm">CC</label>
+                  </div>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="company" name="businessType" value="Company" class="mr-2">
+                    <label for="company" class="text-sm">Company</label>
+                  </div>
+                </div>
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="other" name="businessType" value="Other" class="mr-2">
+                    <label for="other" class="text-sm">Other</label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- VAT and Nature of Business -->
+              <div class="grid grid-cols-2 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">VAT Number</label>
+                  <input type="text" name="vatNumber" id="vatNumber" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Nature of Business</label>
+                  <input type="text" name="natureOfBusiness" id="natureOfBusiness" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+              </div>
+              
+              <!-- Shareholders Info -->
+              <div class="border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+                  <h3 class="text-sm font-medium mb-1">Shareholders Information</h3>
+                  <p class="text-xs text-gray-500">Please provide details of at least one shareholder</p>
+                </div>
+                
+                <!-- Shareholder 1 -->
+                <div class="grid grid-cols-4 border-b border-gray-300 dark:border-gray-700">
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Shareholder 1 Name</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Address</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Telephone No</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">ID Number</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                </div>
+                
+                <!-- Shareholder 2 -->
+                <div class="grid grid-cols-4 border-b border-gray-300 dark:border-gray-700">
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Shareholder 2 Name</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Address</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Telephone No</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">ID Number</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                </div>
+                
+                <!-- Shareholder 3 -->
+                <div class="grid grid-cols-4 border-b border-gray-300 dark:border-gray-700">
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Shareholder 3 Name</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Address</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">Telephone No</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="p-3 bg-white dark:bg-gray-900">
+                    <label class="block text-sm font-medium">ID Number</label>
+                    <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                </div>
+                
+                <!-- Add More Button -->
+                <div class="p-3 bg-white dark:bg-gray-900 text-center">
+                  <button type="button" id="addShareholderBtn" class="px-3 py-1.5 text-sm bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded text-gray-700 dark:text-gray-300 inline-flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Add Another Shareholder
+                  </button>
+                </div>
+              </div>
+              
+              <!-- Office Use Only Block -->
+              <div class="grid grid-cols-1 p-3 border-b border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800">
+                <p class="text-xs font-medium text-gray-500 dark:text-gray-400">OFFICE USE ONLY</p>
+              </div>
+              
+              <!-- Outlet Address -->
+              <div class="grid grid-cols-1 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Outlet Physical Address</label>
+                  <textarea name="physicalAddress" id="physicalAddress" rows="2" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm"></textarea>
+                </div>
+              </div>
+              
+              <!-- Premises -->
+              <div class="grid grid-cols-3 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium">Premises</label>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="owned" name="premises" value="Owned" class="mr-2">
+                    <label for="owned" class="text-sm">Owned</label>
+                  </div>
+                </div>
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <div class="flex items-center">
+                    <input type="radio" id="rented" name="premises" value="Rented" class="mr-2">
+                    <label for="rented" class="text-sm">Rented</label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Postal Address, Postal Code and Telephone Number -->
+              <div class="grid grid-cols-6 border-b border-gray-300 dark:border-gray-700">
+                <div class="col-span-3 p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium mb-2">Postal Address</label>
+                  <textarea name="postalAddress" id="postalAddress" rows="2" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm"></textarea>
+                </div>
+                <div class="col-span-1 p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium mb-2">Postal Code</label>
+                  <input type="text" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                </div>
+                <div class="col-span-2 p-3 bg-white dark:bg-gray-900">
+                  <label class="block text-sm font-medium mb-2">Telephone Number</label>
+                  <div class="flex items-center">
+                    <div class="flex items-center mr-2">
+                      <span class="mr-1">(</span>
+                      <input type="text" class="w-16 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm" placeholder="Area">
+                      <span class="ml-1">)</span>
+                    </div>
+                    <input type="text" class="flex-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm" placeholder="Number">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Contact Information Section -->
+              <div class="grid grid-cols-2 border-b border-gray-300 dark:border-gray-700">
+                <!-- Primary Contact -->
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+                  <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Primary Contact Person</label>
+                    <input type="text" name="contactName" id="contactName" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Cell Number</label>
+                    <input type="text" name="contactNumber" id="contactNumber" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2">Email Address</label>
+                    <input type="email" name="email" id="email" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                </div>
+                
+                <!-- Additional Contact -->
+                <div class="p-3 bg-white dark:bg-gray-900">
+                  <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Additional Contact Person</label>
+                    <input type="text" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm" placeholder="Optional">
+                  </div>
+                  <div class="mb-4">
+                    <label class="block text-sm font-medium mb-2">Cell Number</label>
+                    <input type="text" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium mb-2">Email Address</label>
+                    <input type="email" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm" placeholder="Optional">
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Notification Settings Section -->
+              <div class="grid grid-cols-3 border-b border-gray-300 dark:border-gray-700">
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 flex flex-col">
+                  <label class="block text-sm font-medium mb-2">Accounts SMS</label>
+                  <div class="flex justify-center mt-1">
+                    <div class="flex items-center mr-6">
+                      <input type="radio" id="accSmsYes" name="accountsSms" value="Yes" class="mr-2">
+                      <label for="accSmsYes" class="text-sm">Yes</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="accSmsNo" name="accountsSms" value="No" class="mr-2">
+                      <label for="accSmsNo" class="text-sm">No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 flex flex-col">
+                  <label class="block text-sm font-medium mb-2">Technical SMS</label>
+                  <div class="flex justify-center mt-1">
+                    <div class="flex items-center mr-6">
+                      <input type="radio" id="techSmsYes" name="technicalSms" value="Yes" class="mr-2">
+                      <label for="techSmsYes" class="text-sm">Yes</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="techSmsNo" name="technicalSms" value="No" class="mr-2">
+                      <label for="techSmsNo" class="text-sm">No</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-3 bg-white dark:bg-gray-900 flex flex-col">
+                  <label class="block text-sm font-medium mb-2">Email Reports</label>
+                  <div class="flex justify-center mt-1">
+                    <div class="flex items-center mr-6">
+                      <input type="radio" id="emailReportsYes" name="emailReports" value="Yes" class="mr-2">
+                      <label for="emailReportsYes" class="text-sm">Yes</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input type="radio" id="emailReportsNo" name="emailReports" value="No" class="mr-2">
+                      <label for="emailReportsNo" class="text-sm">No</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Step 2: Account Details -->
+      <div id="step2" class="hidden mb-8">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold mb-1">Account Details</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Please specify your account preferences</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800">
+            <h3 class="text-md font-medium mb-3">Account Type *</h3>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mb-3">Select one or more options as needed</p>
+            <div class="space-y-3">
+              <div class="flex items-start">
+                <input type="checkbox" id="cashAccount" name="accountType_cashAccount" value="Cash Account" required
+                  class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="cashAccount" class="ml-2 block text-sm">
+                  Cash Account
+                </label>
+              </div>
+              <div class="flex items-start">
+                <input type="checkbox" id="creditFacility" name="accountType_creditFacility" value="Credit Facility"
+                  class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <div class="ml-2">
+                  <label for="creditFacility" class="block text-sm font-medium">
+                    Request for Credit Facility
+                  </label>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    Note: Surety Agreement to be signed if selected
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <input type="checkbox" id="debitOrder" name="accountType_debitOrder" value="Debit Order"
+                  class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <div class="ml-2">
+                  <label for="debitOrder" class="block text-sm font-medium">
+                    Debit Order Instruction
+                  </label>
+                  <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                    Note: Debit order instruction to be completed
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium mb-1">Terminal Equipment Option *</label>
+            <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="flex items-start">
+                  <input type="radio" id="monthlyLicense" name="contractOption" value="Monthly License Fee" required
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="monthlyLicense" class="ml-2 block text-sm font-medium">
+                    Monthly License Fee: R125
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input type="radio" id="monthlyRental" name="contractOption" value="Monthly Rental Fee"
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="monthlyRental" class="ml-2 block text-sm font-medium">
+                    Monthly Rental Fee: R450
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input type="radio" id="trialLicense" name="contractOption" value="Trial Period No License"
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="trialLicense" class="ml-2 block text-sm font-medium">
+                    Trial Period (3 months no License fees)
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input type="radio" id="trialRental" name="contractOption" value="Trial Period No Rental"
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="trialRental" class="ml-2 block text-sm font-medium">
+                    Trial Period (3 months no rental fees)
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input type="radio" id="noLicense" name="contractOption" value="No License Fees"
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="noLicense" class="ml-2 block text-sm font-medium">
+                    No license fees
+                  </label>
+                </div>
+                <div class="flex items-start">
+                  <input type="radio" id="noRental" name="contractOption" value="No Rental Fees"
+                    class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="noRental" class="ml-2 block text-sm font-medium">
+                    No rental fees
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- REQUEST FOR CREDIT FACILITY -->
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 mb-6">
+            <h3 class="text-md font-medium mb-3">REQUEST FOR CREDIT FACILITY</h3>
+            
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300 dark:border-gray-700 mb-4">
+                <tr class="bg-gray-50 dark:bg-gray-800">
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 w-1/4">Credit Required</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 w-1/4">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="creditRequired" value="Yes" id="creditRequiredYes" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">Yes</span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="creditRequired" value="No" id="creditRequiredNo" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">No</span>
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr id="suretyAgreementNotice" class="hidden">
+                  <td colspan="2" class="border border-gray-300 dark:border-gray-700 p-3 bg-yellow-50 dark:bg-yellow-900/30">
+                    <div class="flex items-start space-x-2">
+                      <div class="flex-shrink-0 mt-0.5">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-600 dark:text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <p class="text-sm font-medium text-yellow-800 dark:text-yellow-200 mb-1">IMPORTANT: Surety Agreement Required</p>
+                        <p class="text-sm text-yellow-700 dark:text-yellow-300">The signee must read and acknowledge the surety agreement on page 4. This agreement binds you as surety for any debt arising from the lease/purchase agreement.</p>
+                        <button type="button" id="viewSuretyAgreement" class="mt-2 inline-flex items-center px-3 py-1.5 border border-yellow-600 dark:border-yellow-500 text-xs font-medium rounded text-yellow-800 dark:text-yellow-200 bg-yellow-100 dark:bg-yellow-900/50 hover:bg-yellow-200 dark:hover:bg-yellow-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                          </svg>
+                          View Surety Agreement
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">Terms</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div class="border-r border-gray-300 dark:border-gray-700 pr-2">
+                        <label class="block mb-1 text-sm">Consignment</label>
+                        <input type="text" name="consignment" id="consignment" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                      </div>
+                      <div>
+                        <label class="block mb-1 text-sm">Revolving Facility</label>
+                        <input type="text" name="revolvingFacility" id="revolvingFacility" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">Has the business ever had an adverse judgment report against it?</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="adverseJudgment" value="Yes" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">Yes</span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="adverseJudgment" value="No" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">No</span>
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">Cancelled cheque attached to application</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="grid grid-cols-2 gap-4">
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="cancelledCheque" value="Yes" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">Yes</span>
+                        </label>
+                      </div>
+                      <div>
+                        <label class="inline-flex items-center">
+                          <input type="radio" name="cancelledCheque" value="No" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                          <span class="ml-2">No</span>
+                        </label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            
+            <h4 class="text-sm font-medium mb-2 mt-4">ADDITIONAL CONTACT PERSON</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Name</label>
+                <input type="text" name="additionalContactName" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Relationship</label>
+                <input type="text" name="additionalContactRelationship" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium mb-1">Address</label>
+                <input type="text" name="additionalContactAddress" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Telephone Number</label>
+                <input type="text" name="additionalContactTelephone" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Cell Number</label>
+                <input type="text" name="additionalContactCell" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+              </div>
+            </div>
+            
+            <h4 class="text-sm font-medium mb-2 mt-4">TRADE REFERENCE</h4>
+            <div class="overflow-x-auto">
+              <table class="w-full border-collapse border border-gray-300 dark:border-gray-700">
+                <tr class="bg-gray-50 dark:bg-gray-800">
+                  <th class="border border-gray-300 dark:border-gray-700 p-2 text-left text-sm font-medium">Company</th>
+                  <th class="border border-gray-300 dark:border-gray-700 p-2 text-left text-sm font-medium">Account / Ref. No.</th>
+                  <th class="border border-gray-300 dark:border-gray-700 p-2 text-left text-sm font-medium">Contact Name</th>
+                  <th class="border border-gray-300 dark:border-gray-700 p-2 text-left text-sm font-medium">Telephone Number</th>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef1Company" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef1Account" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef1Contact" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef1Telephone" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef2Company" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef2Account" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef2Contact" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef2Telephone" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef3Company" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef3Account" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef3Contact" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="tradeRef3Telephone" class="w-full p-1 border border-gray-300 dark:border-gray-700 rounded text-sm">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Debit Order Instructions -->
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 mb-6">
+            <h3 class="text-md font-medium mb-3 text-center uppercase">Debit Order Instruction</h3>
+            
+            <!-- Debit Order Frequency Selection -->
+            <div class="mb-6">
+              <label class="block text-sm font-medium mb-2">Debit Order Frequency *</label>
+              <select id="debitOrderFrequency" name="debitOrderFrequency" required
+                class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+                <option value="">-- Select Frequency --</option>
+                <option value="Weekly">Weekly (Thursday of each week)</option>
+                <option value="Daily">Daily</option>
+              </select>
+            </div>
+
+            <!-- Debit Order Instructions Container -->
+            <div class="mb-6">
+              <!-- Weekly Debit Order Instruction Text -->
+              <div id="weeklyDebitOrderSection" class="border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 shadow-sm p-4 hidden">
+                <h3 class="font-medium text-lg mb-3 text-center bg-gray-100 dark:bg-gray-700 py-2 rounded">Weekly Debit Order Instruction</h3>
+                <p class="text-sm mb-4 text-justify">
+                  I / We hereby instruct and authorise Blue Label Distribution to draw against my / our account with the abovementioned bank (or any other bank or branch to which I / We may transfer my / our account) the payment due, as reflected on my weekly statement, on Thursday of each and every week commencing on
+                  <input type="date" id="weeklyCommencementDate" name="weeklyCommencementDate" class="mx-1 my-1 p-1 border border-gray-300 dark:border-gray-600 rounded text-sm inline-block w-full md:w-40">
+                  and continuing (as the case may be). All such withdrawals from my / our bank account by you shall be treated as though they had been signed by me / us personally.
+                </p>
+              </div>
+              
+              <!-- Daily Debit Order Instruction Text -->
+              <div id="dailyDebitOrderSection" class="border border-gray-200 dark:border-gray-700 rounded-md bg-white dark:bg-gray-800 shadow-sm p-4 hidden">
+                <h3 class="font-medium text-lg mb-3 text-center bg-gray-100 dark:bg-gray-700 py-2 rounded">Daily Debit Order Instruction</h3>
+                <p class="text-sm mb-4 text-justify">
+                  I / We hereby instruct and authorise Blue Label Distribution to draw against my / our account with the abovementioned bank (or any other bank or branch to which I / We may transfer my / our account) the payment due, as reflected on my daily statement commencing on
+                  <input type="date" id="dailyCommencementDate" name="dailyCommencementDate" class="mx-1 my-1 p-1 border border-gray-300 dark:border-gray-600 rounded text-sm inline-block w-full md:w-40">
+                  and continuing (as the case may be). All such withdrawals from my / our bank account by you shall be treated as though they had been signed by me / us personally.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Assignment Acknowledgment -->
+            <div class="mt-6 mb-6">
+              <div class="flex items-start">
+                <input type="checkbox" id="assignment-acknowledgment" name="assignment-acknowledgment" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="assignment-acknowledgment" class="ml-2 block text-sm">
+                  I have read and understood the Assignment clause and acknowledge that neither party may assign their rights or delegate their obligations without the other party's prior written consent.
+                </label>
+              </div>
+            </div>
+            
+            <h3 class="text-md font-medium mb-3 text-center bg-gray-100 dark:bg-gray-700 py-2 rounded">Banking Details</h3>
+            <p class="text-sm mb-4">The details of my / our bank account are as follows:</p>
+            
+            <div class="overflow-x-auto mb-4">
+              <table class="w-full border-collapse border border-gray-300 dark:border-gray-700">
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">CUSTOMER REFERENCE NUMBER</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="customerRefNumber" class="w-full p-1.5 border-0 bg-transparent focus:ring-0">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">ACCOUNT NAME</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="debitOrderAccountName" class="w-full p-1.5 border-0 bg-transparent focus:ring-0">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">BANK</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="debitOrderBank" class="w-full p-1.5 border-0 bg-transparent focus:ring-0">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">BRANCH NAME & TOWN</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <input type="text" name="debitOrderBranchNameTown" class="w-full p-1.5 border-0 bg-transparent focus:ring-0">
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">BRANCH NUMBER</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="flex items-center justify-start">
+                      <input type="text" name="branchNumber1" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="branchNumber2" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="branchNumber3" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="branchNumber4" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="branchNumber5" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="branchNumber6" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">ACCOUNT NUMBER</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="flex items-center justify-start flex-wrap">
+                      <input type="text" name="accountDigit1" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit2" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit3" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit4" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit5" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit6" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit7" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit8" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit9" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit10" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                      <input type="text" name="accountDigit11" maxlength="1" class="w-8 h-8 p-0 text-center border border-gray-300 dark:border-gray-600 rounded mx-0.5">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2 font-medium">TYPE OF ACCOUNT</td>
+                  <td class="border border-gray-300 dark:border-gray-700 p-2">
+                    <div class="flex flex-col">
+                      <div class="flex items-center mb-2">
+                        <input type="checkbox" id="accountTypeCurrent" name="debitOrderAccountType" value="CURRENT (CHEQUE)" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700 mr-2">
+                        <label for="accountTypeCurrent" class="text-sm">CURRENT (CHEQUE)</label>
+                      </div>
+                      <div class="flex items-center mb-2">
+                        <input type="checkbox" id="accountTypeSavings" name="debitOrderAccountType" value="SAVINGS" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700 mr-2">
+                        <label for="accountTypeSavings" class="text-sm">SAVINGS</label>
+                      </div>
+                      <div class="flex items-center">
+                        <input type="checkbox" id="accountTypeTransmission" name="debitOrderAccountType" value="TRANSMISSION" class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700 mr-2">
+                        <label for="accountTypeTransmission" class="text-sm">TRANSMISSION</label>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          
+          <!-- Banking Details -->
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800">
+            <h3 class="text-md font-medium mb-3">Banking Details</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="accountName" class="block text-sm font-medium mb-1">Account Name *</label>
+                <input type="text" id="accountName" name="accountName" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+              </div>
+              <div>
+                <label for="bankName" class="block text-sm font-medium mb-1">Bank Name *</label>
+                <select id="bankName" name="bankName" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+                  <option value="">-- Select Bank --</option>
+                  <option value="ABSA">ABSA</option>
+                  <option value="Capitec">Capitec</option>
+                  <option value="FNB">FNB</option>
+                  <option value="Nedbank">Nedbank</option>
+                  <option value="Standard Bank">Standard Bank</option>
+                </select>
+              </div>
+              <div>
+                <label for="accountNumber" class="block text-sm font-medium mb-1">Account Number *</label>
+                <input type="text" id="accountNumber" name="accountNumber" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+              </div>
+              <div>
+                <label for="accountType" class="block text-sm font-medium mb-1">Account Type *</label>
+                <select id="accountType" name="accountType" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+                  <option value="">-- Select Account Type --</option>
+                  <option value="Current">Current/Cheque</option>
+                  <option value="Savings">Savings</option>
+                  <option value="Transmission">Transmission</option>
+                </select>
+              </div>
+              <div>
+                <label for="branchName" class="block text-sm font-medium mb-1">Branch Name *</label>
+                <input type="text" id="branchName" name="branchName" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+              </div>
+              <div>
+                <label for="branchCode" class="block text-sm font-medium mb-1">Branch Code *</label>
+                <input type="text" id="branchCode" name="branchCode" required
+                  class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3: Services -->
+      <div id="step3" class="hidden mb-8">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold mb-1">Service Selection</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Select additional services you want to offer</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Airtime and Data Services</h3>
+              <button type="button" id="selectAllAirtime" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                Select All
+              </button>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="vodacom" name="networks" value="Vodacom" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="vodacom" class="ml-2 block text-sm">Vodacom</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="mtn" name="networks" value="MTN" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="mtn" class="ml-2 block text-sm">MTN</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="cellc" name="networks" value="Cell C" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="cellc" class="ml-2 block text-sm">Cell C</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="telkom" name="networks" value="Telkom" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="telkom" class="ml-2 block text-sm">Telkom</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="cconnect" name="networks" value="C-Connect" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="cconnect" class="ml-2 block text-sm">C-Connect</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="globalairtime" name="networks" value="Global Airtime & Data" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="globalairtime" class="ml-2 block text-sm">Global Airtime & Data</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="ringas" name="networks" value="Ringas" class="airtime-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="ringas" class="ml-2 block text-sm">Ringas</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Electricity Services</h3>
+              <div class="flex gap-2">
+                <button type="button" id="selectAllCommonProviders" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                  Select Standard
+                </button>
+                <button type="button" id="selectAllElectricityProviders" class="px-3 py-1 text-xs font-medium bg-primary text-white rounded hover:bg-opacity-90 transition-colors">
+                  Select All Providers
+                </button>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600 dark:text-gray-400 mb-3">Select electricity service providers available in your area:</p>
+            
+            <!-- Standard providers as checkboxes -->
+            <div class="mb-4">
+              <h4 class="text-sm font-medium mb-2">Standard Providers:</h4>
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                <div class="flex items-center">
+                  <input type="checkbox" id="eskom" name="electricity" value="Eskom" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="eskom" class="ml-2 block text-sm">Eskom</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="cityOfCapeTown" name="electricity" value="City of Cape Town" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="cityOfCapeTown" class="ml-2 block text-sm">City of Cape Town</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="cityPower" name="electricity" value="City Power" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="cityPower" class="ml-2 block text-sm">City Power</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="ekurhuleni" name="electricity" value="Ekurhuleni" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="ekurhuleni" class="ml-2 block text-sm">Ekurhuleni</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="tshwane" name="electricity" value="Tshwane" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="tshwane" class="ml-2 block text-sm">Tshwane</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="ethekwini" name="electricity" value="Ethekwini" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="ethekwini" class="ml-2 block text-sm">Ethekwini</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="capetownpos" name="electricity" value="Capetownpos" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="capetownpos" class="ml-2 block text-sm">Capetownpos</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="syntellprivateutilities" name="electricity" value="Syntellprivateutilities" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="syntellprivateutilities" class="ml-2 block text-sm">Syntellprivateutilities</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="witzenbergtok" name="electricity" value="Witzenberg tok" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="witzenbergtok" class="ml-2 block text-sm">Witzenberg tok</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="citiqcaps" name="electricity" value="Citiqcaps" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="citiqcaps" class="ml-2 block text-sm">Citiqcaps</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="drakenstein" name="electricity" value="Drakenstein" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="drakenstein" class="ml-2 block text-sm">Drakenstein</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="syntellswartland" name="electricity" value="Xml interface - syntellswartland" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="syntellswartland" class="ml-2 block text-sm">Xml interface - syntellswartland</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="ontec" name="electricity" value="Ontec" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="ontec" class="ml-2 block text-sm">Ontec</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="theewaterskloof" name="electricity" value="Theewaterskloof" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="theewaterskloof" class="ml-2 block text-sm">Theewaterskloof</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="prepaidworld" name="electricity" value="Prepaidworld" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="prepaidworld" class="ml-2 block text-sm">Prepaidworld</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="stellenbosch" name="electricity" value="Stellenbosch" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="stellenbosch" class="ml-2 block text-sm">Stellenbosch</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="breedevalley" name="electricity" value="Breedevalley" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="breedevalley" class="ml-2 block text-sm">Breedevalley</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="syntelllangeberg" name="electricity" value="Syntelllangeberg" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="syntelllangeberg" class="ml-2 block text-sm">Syntelllangeberg</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="easypayprivateutilities" name="electricity" value="Easypayprivateutilities" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="easypayprivateutilities" class="ml-2 block text-sm">Easypayprivateutilities</label>
+                </div>
+                <div class="flex items-center">
+                  <input type="checkbox" id="syntellswellendam" name="electricity" value="Syntellswellendam" class="electricity-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                  <label for="syntellswellendam" class="ml-2 block text-sm">Syntellswellendam</label>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Additional Providers Dropdown -->
+            <div>
+              <h4 class="text-sm font-medium mb-2">Select additional providers:</h4>
+              <div class="relative">
+                <select id="additionalElectricityProvider" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-sm bg-white dark:bg-gray-800">
+                  <option value="">-- Select Provider --</option>
+                  <option value="Albertluthuli">Albertluthuli</option>
+                  <option value="Alfrednzo">Alfrednzo</option>
+                  <option value="Amahlathi">Amahlathi</option>
+                  <option value="Beaufort west">Beaufort West</option>
+                  <option value="Bela bela">Bela Bela</option>
+                  <option value="Beyersnaude">Beyersnaude</option>
+                  <option value="Bitou">Bitou</option>
+                  <option value="Blouberg">Blouberg</option>
+                  <option value="Blueberrycaps">Blueberrycaps</option>
+                  <option value="Britishxabhaya">Britishxabhaya</option>
+                  <option value="Brohamcaps">Brohamcaps</option>
+                  <option value="Buffalocity">Buffalocity</option>
+                  <option value="Capeagulhas">Capeagulhas</option>
+                  <option value="Centlec">Centlec</option>
+                  <option value="Conlogcaps">Conlogcaps</option>
+                  <option value="Dawid kruiper">Dawid Kruiper</option>
+                  <option value="Dikgatlongcaps">Dikgatlongcaps</option>
+                  <option value="Ditsobotla">Ditsobotla</option>
+                  <option value="Elsenburg">Elsenburg</option>
+                  <option value="Emalahleni">Emalahleni</option>
+                  <option value="Emalahlenieasterncape">Emalahlenieasterncape</option>
+                  <option value="Emfuleni">Emfuleni</option>
+                  <option value="Gasegonyana">Gasegonyana</option>
+                  <option value="George">George</option>
+                  <option value="Govan mbeki">Govan Mbeki</option>
+                  <option value="Greaterletaba">Greaterletaba</option>
+                  <option value="Greatertzaneen">Greatertzaneen</option>
+                  <option value="Harrygwala">Harrygwala</option>
+                  <option value="Hbrosuw">Hbrosuw</option>
+                  <option value="Idealprepaid">Idealprepaid</option>
+                  <option value="Ismetering">Ismetering</option>
+                  <option value="Iswitch">Iswitch</option>
+                  <option value="Jb markscaps">Jb Markscaps</option>
+                  <option value="Johannesburgwater">Johannesburgwater</option>
+                  <option value="Kannaland">Kannaland</option>
+                  <option value="Kgatelopelecaps">Kgatelopelecaps</option>
+                  <option value="Kgethlengrivier">Kgethlengrivier</option>
+                  <option value="Khanyisaprepaid">Khanyisaprepaid</option>
+                  <option value="Knysna">Knysna</option>
+                  <option value="Kokstad">Kokstad</option>
+                  <option value="Koukamma">Koukamma</option>
+                  <option value="Laingsburg">Laingsburg</option>
+                  <option value="Landisvendingcaps">Landisvendingcaps</option>
+                  <option value="Lekwa">Lekwa</option>
+                  <option value="Llenergycaps">Llenergycaps</option>
+                  <option value="Lukhanji">Lukhanji</option>
+                  <option value="Madibeng">Madibeng</option>
+                  <option value="Mamusa">Mamusa</option>
+                  <option value="Maquassi hills">Maquassi Hills</option>
+                  <option value="Masilonyana">Masilonyana</option>
+                  <option value="Matatiele">Matatiele</option>
+                  <option value="Matjhabeng">Matjhabeng</option>
+                  <option value="Matzikama">Matzikama</option>
+                  <option value="Mbombela">Mbombela</option>
+                  <option value="Mcwattkeeper">Mcwattkeeper</option>
+                  <option value="Merafong">Merafong</option>
+                  <option value="Meterman">Meterman</option>
+                  <option value="Metermate">Metermate</option>
+                  <option value="Metershackcaps">Metershackcaps</option>
+                  <option value="Midvaal">Midvaal</option>
+                  <option value="Modimollecaps">Modimollecaps</option>
+                  <option value="Mogalecity">Mogalecity</option>
+                  <option value="Mohokare">Mohokare</option>
+                  <option value="Mosselbay">Mosselbay</option>
+                  <option value="Msukulingwa">Msukulingwa</option>
+                  <option value="Musina">Musina</option>
+                  <option value="Myvoltage">Myvoltage</option>
+                  <option value="Namakhoi">Namakhoi</option>
+                  <option value="Ndlambe">Ndlambe</option>
+                  <option value="Newcastle">Newcastle</option>
+                  <option value="Ngwathe">Ngwathe</option>
+                  <option value="Oudtshoorn">Oudtshoorn</option>
+                  <option value="Overstrand">Overstrand</option>
+                  <option value="Phalaborwa">Phalaborwa</option>
+                  <option value="Polokwane">Polokwane</option>
+                  <option value="Ppex">Ppex</option>
+                  <option value="Prepaidmeter">Prepaidmeter</option>
+                  <option value="Prestigemetering">Prestigemetering</option>
+                  <option value="Proteametercaps">Proteametercaps</option>
+                  <option value="Ramotshere">Ramotshere</option>
+                  <option value="Randwestcitycaps">Randwestcitycaps</option>
+                  <option value="Renosterberg">Renosterberg</option>
+                  <option value="Richtersveld">Richtersveld</option>
+                  <option value="Rustenburg">Rustenburg</option>
+                  <option value="Sakhisizwe">Sakhisizwe</option>
+                  <option value="Sasolburg">Sasolburg</option>
+                  <option value="Scigrow">Scigrow</option>
+                  <option value="Senqu">Senqu</option>
+                  <option value="Siyathemba">Siyathemba</option>
+                  <option value="Solplaaitjie">Solplaaitjie</option>
+                  <option value="Stevetshwete">Stevetshwete</option>
+                  <option value="Stsscaps">Stsscaps</option>
+                  <option value="Syntellkamiesberg">Syntellkamiesberg</option>
+                  <option value="Syntellletsemeng">Syntellletsemeng</option>
+                  <option value="Syntellmakana">Syntellmakana</option>
+                  <option value="Syntellmalutiaphofung">Syntellmalutiaphofung</option>
+                  <option value="Syntellmatjhabeng">Syntellmatjhabeng</option>
+                  <option value="Syntellphokwane">Syntellphokwane</option>
+                  <option value="Syntellprincealbert">Syntellprincealbert</option>
+                  <option value="Thabachwe">Thabachwe</option>
+                  <option value="Thabazimbiwater">Thabazimbiwater</option>
+                  <option value="Theprepaidteam">Theprepaidteam</option>
+                  <option value="Tokologo">Tokologo</option>
+                  <option value="Tshwanepeu">Tshwanepeu</option>
+                  <option value="Tswaingcaps">Tswaingcaps</option>
+                  <option value="Tswelopele">Tswelopele</option>
+                  <option value="Ubuntu">Ubuntu</option>
+                  <option value="Umhlathuze">Umhlathuze</option>
+                  <option value="Umngeni">Umngeni</option>
+                  <option value="Unipin">Unipin</option>
+                  <option value="Urbanisecaps">Urbanisecaps</option>
+                  <option value="Urbtec">Urbtec</option>
+                  <option value="Uthukelacaps">Uthukelacaps</option>
+                  <option value="Utilipay">Utilipay</option>
+                  <option value="Uvend">Uvend</option>
+                  <option value="Xml interface - edmsolutions">XML Interface - EDM Solutions</option>
+                  <option value="Xml interface - waltersisuluideal">XML Interface - Walters Isulu Ideal</option>
+                  <option value="Xml interface -- kingsebatadalindyebo">XML Interface - King Sebata Dalindyebo</option>
+                </select>
+                <button type="button" id="addElectricityProvider" class="absolute right-2 top-2 text-primary hover:text-primary-dark">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            
+            <!-- Selected Additional Providers -->
+            <div class="mt-4">
+              <h4 class="text-sm font-medium mb-2">Selected additional providers:</h4>
+              <div id="selectedElectricityProviders" class="flex flex-wrap gap-2">
+                <!-- Selected providers will be added here dynamically -->
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Bill Payment Services</h3>
+              <button type="button" id="selectAllBillPayments" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                Select All
+              </button>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="easyPay" name="billPayments" value="Easy Pay" class="bill-payment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="easyPay" class="ml-2 block text-sm">Bill payments (Easy Pay)</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="bluBill" name="billPayments" value="Blu Bill" class="bill-payment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="bluBill" class="ml-2 block text-sm">Bill payments (Blu Bill)</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="bluDstv" name="billPayments" value="Blu DSTV" class="bill-payment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="bluDstv" class="ml-2 block text-sm">Blu DSTV (R1.50 per bill incl. VAT)</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="syntell" name="billPayments" value="Syntell" class="bill-payment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="syntell" class="ml-2 block text-sm">Syntell (up to R2.00 per bill incl. VAT) supplier dependant</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="trafficFines" name="billPayments" value="Traffic Fines" class="bill-payment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="trafficFines" class="ml-2 block text-sm">Syntell Traffic Fines (R1.71 per bill incl. VAT)</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Money Transfer Services</h3>
+              <button type="button" id="selectAllMoneyTransfers" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                Select All
+              </button>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="makuru" name="moneyTransfers" value="Makuru" class="money-transfer-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="makuru" class="ml-2 block text-sm">Makuru</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="halloPaisa" name="moneyTransfers" value="Hallo Paisa" class="money-transfer-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="halloPaisa" class="ml-2 block text-sm">Hallo Paisa</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="mtnMomo" name="moneyTransfers" value="MTN Momo" class="money-transfer-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="mtnMomo" class="ml-2 block text-sm">MTN Momo</label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Entertainment Services</h3>
+              <button type="button" id="selectAllEntertainment" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                Select All
+              </button>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="gamingVouchers" name="entertainment" value="Gaming vouchers" class="entertainment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="gamingVouchers" class="ml-2 block text-sm">Gaming vouchers</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="bluVoucher" name="entertainment" value="Blu Voucher" class="entertainment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="bluVoucher" class="ml-2 block text-sm">Blu Voucher</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="lifestyle" name="entertainment" value="Lifestyle" class="entertainment-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="lifestyle" class="ml-2 block text-sm">Lifestyle</label>
+              </div>
+              <div class="mt-4 py-2 px-3 bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 dark:border-yellow-600">
+                <div class="flex items-center">
+                  <input type="checkbox" id="noGaming" name="noGaming" value="No Gaming" class="h-4 w-4 text-red-500 focus:ring-red-500 border-gray-300 dark:border-gray-700">
+                  <label for="noGaming" class="ml-2 block text-sm font-medium text-yellow-800 dark:text-yellow-200">No Gaming to be activated</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-md font-medium">Ticketing Services</h3>
+              <button type="button" id="selectAllTicketing" class="px-3 py-1 text-xs font-medium text-primary border border-primary rounded hover:bg-primary hover:text-white transition-colors">
+                Select All
+              </button>
+            </div>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <input type="checkbox" id="longDistanceBus" name="ticketing" value="Long Distance Bus" class="ticketing-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="longDistanceBus" class="ml-2 block text-sm">Ticketing (Long Distance Bus)</label>
+              </div>
+              <div class="flex items-center">
+                <input type="checkbox" id="events" name="ticketing" value="Events" class="ticketing-checkbox h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                <label for="events" class="ml-2 block text-sm">Ticketing (Events)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4: Terms & Conditions -->
+      <div id="step4" class="hidden mb-8">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold mb-1">Terms & Conditions</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Please review and accept the terms and conditions</p>
+        </div>
+
+        <div class="space-y-6">
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800">
+            <div class="mb-4">
+              <div class="flex flex-wrap border-b border-gray-200 dark:border-gray-700">
+                <button type="button" id="tab-customer-agreement" class="px-4 py-2 text-sm font-medium text-primary border-b-2 border-primary" onclick="showTermsTab('customer-agreement')">
+                  Customer Agreement
+                </button>
+                <button type="button" id="tab-airtime-vouchers" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400" onclick="showTermsTab('airtime-vouchers')">
+                  Airtime Vouchers
+                </button>
+                <button type="button" id="tab-electricity" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400" onclick="showTermsTab('electricity')">
+                  Electricity
+                </button>
+                <button type="button" id="tab-bill-payments" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400" onclick="showTermsTab('bill-payments')">
+                  Bill Payments
+                </button>
+                <button type="button" id="tab-dstv" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400" onclick="showTermsTab('dstv')">
+                  DSTV (Multichoice)
+                </button>
+                <button type="button" id="tab-surety-agreement" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 border-b-2 border-transparent" onclick="showTermsTab('surety-agreement')">
+                  <span class="flex items-center">
+                    Surety Agreement
+                  </span>
+                </button>
+                <button type="button" id="tab-fraud-notification" class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400" onclick="showTermsTab('fraud-notification')">
+                  <span class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    Fraud Notice
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div class="max-h-60 overflow-y-auto">
+              <!-- Customer Agreement -->
+              <div id="terms-customer-agreement" class="text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-2">CUSTOMER AGREEMENT</h3>
+                <p class="mb-2">This Agreement shall come into force on the date of signature and shall be in effect for a period of 24 (Twenty four) months or until terminated in accordance with the provisions of clause 9. After the initial 24 month period if the contract is not cancelled in writing it shall continue indefinitely until such a cancellation letter has been received, giving the company a 3 (three) month notice period.</p>
+                <p class="mb-2">In the event of termination of the contract before the duration of the agreement has expired, the customer shall be liable for the greater of monthly rental or 1% of turnover from the last full month of trading, multiplied by the number of months remaining in the contract.</p>
+                <p class="mb-2">The Outlet shall at all times during the duration of this Agreement keep the Terminal Equipment on its premises, as a product manufactured by the Company, and according to the specifications supplied by the Company to the Outlet from time to time.</p>
+                <p class="mb-2">The Outlet shall not during or after this agreement terminates, alter, remove or in any way tamper with any of the Company's marks, numbers, or any other part or accessory on the Terminal Equipment.</p>
+                <p class="mb-2">The Outlet shall not during or after this agreement terminates adapt, change, or adjust the Terminal Equipment: In a manner so as to allow pre paid stock from any other Network supplier, other than the Company to be accepted by the Terminal Equipment, or To perform in a manner other than for which it was originally designed and manufactured, or in accordance with the instructions for use as provided by the Company to the Outlet.</p>
+                <p class="mb-2">The Outlet shall at all times purchase the Pre-paid Stock only from the Company.</p>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="customer-agreement-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="customer-agreement-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the Customer Agreement terms.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Surety Agreement -->
+              <div id="terms-surety-agreement" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-4 text-center">SURETYSHIP AGREEMENT</h3>
+                <p class="text-center mb-3">Made and entered into by and between</p>
+                <p class="text-center mb-3">
+                  Blue Label Distribution (PTY) LTD<br>
+                  Registration number 2004/003668/07<br>
+                  (hereinafter referred to as "The Creditor")
+                </p>
+                <p class="text-center mb-3">AND</p>
+                <div class="mb-4">
+                  <label for="suretyName" class="block text-sm font-medium mb-1">Full Name of Surety *</label>
+                  <input type="text" id="suretyName" name="suretyName" 
+                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+                </div>
+                <p class="text-center mb-3">(Hereinafter referred to as "The Surety")</p>
+                <p class="text-center mb-3">WHEREAS the Creditor entered into an agreement of lease / purchase with</p>
+                <div class="mb-4">
+                  <label for="principalDebtorName" class="block text-sm font-medium mb-1">Name of Principal Debtor *</label>
+                  <input type="text" id="principalDebtorName" name="principalDebtorName" 
+                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50 dark:bg-gray-800 dark:border-gray-700 text-base p-2 border">
+                </div>
+                <p class="text-center mb-3">(Hereinafter referred to as "the Principal Debtor")</p>
+                
+                <p class="font-bold mt-6 mb-2">SURETY FOR ANY DEBT ARISING FROM THE LEASE / PURCHASE AGREEMENT BETWEEN THE PRINCIPAL DEBTOR AND BLUE LABEL DISTRIBUTION (PTY) LTD</p>
+                
+                <p class="mb-3"><span class="font-bold">1.</span> I, 
+                  <input type="text" id="surety_full_name" name="surety_full_name" placeholder="Full Name" class="w-48 mx-1 p-1 border border-gray-300 dark:border-gray-700 rounded inline-block text-sm">
+                  (ID No: 
+                  <input type="text" id="surety_id_number" name="surety_id_number" placeholder="ID Number" class="w-48 mx-1 p-1 border border-gray-300 dark:border-gray-700 rounded inline-block text-sm">
+                  ) the undersigned, do hereby bind myself to Blue Label Distribution (Pty) Ltd (Registration number 2004/003668/07) and it's successors-in-title and/or assigns as surety for and co-principal debtor with the Principal Debtor and its successors-in-title for the due and punctual performance by the Principal Debtor of each of and all of the obligations of whatsoever nature and howsoever arising which the debtor in his own name may now or in the future owe to the Creditor, whether such indebtedness occurs during my lifetime or after my death, including any damages suffered by the Creditor as a result of the failure of the Debtor to fulfill its obligations timeously or at all to the Creditor, and further including any claims for loss or damages arising from the cancellation or abandonment of any contracts by the trustee, liquidator, judicial manager or receiver in a scheme of arrangement or compromise of the Principal Debtor.
+                </p>
+                
+                <p class="mb-3"><span class="font-bold">2.</span> My liability as Surety in terms of this suretyship shall be unlimited.</p>
+                
+                <p class="mb-3"><span class="font-bold">3.</span> The rights of the Creditor under this suretyship shall not be affected or diminished if the Creditor at any time obtains additional suretyships, guarantees, securities or indemnities in connection with the Principal Debtor's Obligations. My liability shall be bound by all admissions or acknowledgments or indebtedness made or given by the Principal Debtor from time to time. I agree and declare that it shall always be in the Creditor's sole and absolute discretion to determine the extent, nature and duration of the facilities and terms to be allowed to the Principal Debtor.</p>
+                
+                <p class="mb-3"><span class="font-bold">4.</span> The Creditor shall be entitled, whether before or after the due date for payment or performance of the Debtor's obligations without reference or notification to me, the Surety, without affecting it rights hereunder, to release other sureties and securities, to grant the Principal Debtor extensions of time for payment and other indulgences, to compound or make any other arrangements with the Principal Debtor for the discharge of the Principal Debtor's obligations, to obtain a reduction of charges in a voluntary or other arrangement or in liquidation, to alter or vary other arrangements with the Principal Debtor including the renegotiation of the Principal Debtor's payment obligations, to accept any dividend in a liquidation of any present or future agreement between the Principal Debtor and the Creditor.</p>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="surety-agreement-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="surety-agreement-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the terms of this suretyship agreement. I acknowledge that this agreement binds me as surety for any debt arising from the lease/purchase agreement between the Principal Debtor and Blue Label Distribution (Pty) Ltd.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Airtime Vouchers Terms -->
+              <div id="terms-airtime-vouchers" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-2">TERMS AND CONDITIONS OF AIRTIME VOUCHERS</h3>
+                <ol class="list-decimal pl-5 space-y-2">
+                  <li>When a prepaid airtime or data voucher is printed, the details (network, denomination, date and time of sale, serial number, name of store, PIN and instructions) are printed on the voucher slip. The PIN number is used to redeem the value of the voucher with the particular network. Once the PIN is "exposed" there is no control on who has seen it or tried to redeem it. Blue Label Distribution cannot prevent the voucher from being used.</li>
+                  <li>Your Blue Label account will be debited. Please ensure that you have enough money available in your account in order to do the sale.</li>
+                  <li>There is reprint function that can be utilised should the printer jam or if the ink is too light to read.</li>
+                  <li>Vouchers do expire so all queries need to be logged within 48 hours of the transaction date. Please be advised that vouchers older than 3 months cannot be validated.</li>
+                  <li>When logging a query please ensure that the serial number or reference number is available. When querying a Telkom voucher you do need to provide the first 12 digits of the PIN number only.</li>
+                  <li>When logging a query with Blue label Distribution it is advisable to scratch out the PIN on the scanned images. Blue Label will only ask you for the serial number or reference number. For a Telkom query only the first 12 digits of the PIN will be asked for. If anyone asks you for a full PIN please note that this is an attempt to defraud or steal from you. Blue Label staff do not have access to PINS no matter how hard they try to convince you.</li>
+                  <li>Queries can be logged via the call centre 0861 411 411. When logging a call via the call centre please note that a security check will be completed and only authorised contacts will be able to log the query. If there are more than 5 vouchers that need to be validated, we do recommend that you email your request (please scratch out the pin numbers). On every call you will receive a reference number for tracking purposes. Alternatively you can email airtime@blts.co.za.</li>
+                  <li>All vouchers need to be validated with the network; we do endeavour to get feedback as fast as possible but we are dependent on the network turnaround time as we do not have direct access to their IT systems.</li>
+                  <li>Outcome from the network will be emailed to you, so please ensure that we have your correct email details:
+                    <ol class="list-alpha pl-5 space-y-1 mt-1">
+                      <li>Used after sold - the voucher was used after the transaction/sales date; BLD will not provide a refund/credit.</li>
+                      <li>Used before sold - In this instance the voucher was used before the transaction/sales date. If the voucher was requested to be reloaded to the machine by the merchant, then no refund will be passed. If this voucher was sold previously by another merchant, a refund/credit will be passed.</li>
+                      <li>Expired voucher - Expired vouchers will only get refunded/credited when the voucher has expired before the transaction/sales date. If the voucher expired after sold no refund/credit will be passed.</li>
+                      <li>Active voucher - If the voucher is not redeemed and the status is active:
+                        <div class="pl-2 mt-1">
+                          <p>Offline Merchants - the voucher will be returned to the machine (please note that the risk is that the PIN has been exposed and if the voucher is used then there will be no credit passed and results in poor shopper experience).</p>
+                          <p class="mt-1">Online Merchant - the voucher will not be returned to stock as the PIN has been exposed. No credit will be passed.</p>
+                        </div>
+                      </li>
+                      <li>Invalid serial number: - This status is received when the number provided is incorrect. When calling in please ensure that you repeat the voucher serial number clearly.</li>
+                      <li>Used/Archived/Voucher not found: - The voucher has been used but the Network cannot validate as they have archived it. Please ensure that all vouchers are logged within 48 hours.</li>
+                    </ol>
+                  </li>
+                  <li>Please ensure that all your staff are briefed on the conditions of refunds and that no one at Blue Label has access to PIN's and will never ask for the disclosure of a full PIN number (only the first 12 digits of a Telkom PIN).</li>
+                </ol>
+                <style>
+                  .list-alpha {
+                    list-style-type: lower-alpha;
+                  }
+                </style>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="airtime-vouchers-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="airtime-vouchers-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the Airtime Vouchers terms and conditions.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Electricity Terms -->
+              <div id="terms-electricity" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-2">TERMS AND CONDITIONS OF ELECTRICITY AGREEMENT</h3>
+                <ol class="list-decimal pl-5 space-y-2">
+                  <li>The sale of a Prepaid Electricity Voucher by Blue Label Distribution is final.</li>
+                  <li>Always double-check that the customer has enough money to pay for the requested voucher. Once the voucher has printed there can be no reversal of sale whatsoever.</li>
+                  <li>Please double-check that the meter numbers that you are manually entering are correct.</li>
+                  <li>As you sell prepaid electricity your Blue Label Distribution account will be debited. Please ensure that you have enough money available in your Blue Label Distribution account in order to do the sale.</li>
+                  <li>Display a visible sign at your counter . "Sales of Prepaid Products are Final".</li>
+                  <li>Point of Sale Advertising material should be visible at strategic points in the store in order to promote sales.</li>
+                  <li>Contact your sales representative on a regular basis to ensure you have the latest advertising materials.</li>
+                  <li>You are required to give Blue Label Distribution cancellation notice should you wish to stop selling Prepaid Electricity.</li>
+                  <li>Refer all prepaid electricity customer queries to the respective Municipality helpdesk or Customer Contact Centre.</li>
+                  <li>Blue Label Distribution reserves the right to terminate this contract should it be found that any additional surcharges are levied onto the electricity sale amount.</li>
+                  <li>This agreement is subject to Municipality approval and Municipality standard terms and conditions.</li>
+                </ol>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="electricity-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="electricity-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the Electricity Agreement terms and conditions.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Bill Payments Terms -->
+              <div id="terms-bill-payments" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-2">TERMS AND CONDITIONS OF BILL PAYMENTS</h3>
+                <ol class="list-decimal pl-5 space-y-2">
+                  <li>The processing of a Bill Payment transaction requires online capability due to requirement for online validation.</li>
+                  <li>This agreement is subject to approval by Blue Label Distribution (Pty) Ltd. Once approved, Blue Label Distribution (Pty) Ltd shall enable the Bill Payment transaction service in addition to the current products/services supplied in terms of the current agreement between the parties.</li>
+                  <li>BluDSTV Bill Payments: Existing payment terms already agreed between the Merchant and Blue Label Distribution (Pty) Ltd shall apply.</li>
+                  <li>SAPO, Pay@ and Syntell Bill Payments: Daily debit order payment terms apply (Blue Label Distribution (Pty) Ltd debit order form to be completed and signed by the Merchant)</li>
+                  <li>Refunds are at the sole discretion of Blue Label Distribution (Pty) Ltd. NO REFUNDS ON TRAFFIC FINES.</li>
+                  <li>Blue Label Distribution (Pty) Ltd reserves the right to charge a fee for the administration and processing of a Bill Payment reversal.</li>
+                  <li>Bank charges or merchant service fees (for cash, debit and credit cards) are reimbursed based on the Merchant's rate card (issued by their bank) up to maximum amounts set per bill issuer. There is no reimbursement on SAPO.</li>
+                  <li>Unless expressly stated otherwise, all amounts are inclusive of VAT and escalate with effect from each anniversary of the effective date by an amount equal to the Consumer Price Index as published by Statistics South Africa for the preceding 12 months.</li>
+                  <li>Blue Label Distribution (Pty) Ltd shall inform the merchant in writing of any amendments which may include pricing or rate adjustments.</li>
+                  <li>When making a payment, a consumer will need to provide their customer account number. This will be used as the payment reference.</li>
+                  <li>Blue Label Distribution (Pty) Ltd reserves the right to withhold any commission amounts due to the merchant in relation to any non-payment by the customer for any reason whatsoever.</li>
+                  <li>Save to the extent specifically or by necessary implication modified in or inconsistent with provisions of this Addendum or unless otherwise agreed in writing between the parties, all the terms and conditions of the Merchant Agreement shall mutatis mutandis continue to apply.</li>
+                </ol>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="bill-payments-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="bill-payments-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the Bill Payments terms and conditions.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- DSTV (Multichoice) Terms -->
+              <div id="terms-dstv" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <h3 class="font-bold mb-2">TERMS AND CONDITIONS OF DSTV (MULTICHOICE)</h3>
+                <ol class="list-decimal pl-5 space-y-2">
+                  <li>The processing of a DStv Bill Payment transaction requires online capability due to requirement for online validation.</li>
+                  <li>This agreement is subject to approval by Blue Label Distribution (Pty) Ltd. Once approved, Blue Label Distribution (Pty) Ltd shall enable the DStv Bill Payment transaction service in addition to the current products/services supplied in terms of the current agreement between the parties.</li>
+                  <li>Existing payment terms already agreed between the merchant and Blue Label Distribution shall apply.</li>
+                  <li>Refunds are at the sole discretion of Blue Label Distribution (Pty) Ltd.</li>
+                  <li>Blue Label Distribution (Pty) Ltd reserves its right to charge a fee for the administration and processing of a DStv Bill Payment reversal.</li>
+                  <li>Unless expressly stated otherwise, all amounts are inclusive of VAT and escalate with effect from each anniversary of the effective date by an amount equal to the Consumer Price Index as published by Statistics South Africa for the preceding 12 months.</li>
+                  <li>Blue Label Distribution (Pty) Ltd shall inform the merchant in writing of any amendments which may include pricing/rate adjustments.</li>
+                  <li>When making a payment, a consumer will need to provide their DStv customer number. This number will be used as the payment reference.</li>
+                  <li>Blue Label Distribution (Pty) Ltd reserves the right to withhold any commission amounts due to the merchant in relation to any non-payment by the customer for any reason whatsoever.</li>
+                  <li>Save to the extent specifically or by necessary implication modified in or inconsistent with provisions of this Addendum or unless otherwise agreed in writing between the parties, all the terms and conditions of the Merchant Agreement shall mutatis mutandis continue to apply.</li>
+                </ol>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="dstv-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="dstv-ack" class="ml-2 block text-sm">
+                      I have read, understood, and agree to be bound by the DSTV (Multichoice) terms and conditions.
+                    </label>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Fraud Notification -->
+              <div id="terms-fraud-notification" class="hidden text-sm text-gray-700 dark:text-gray-300">
+                <div class="p-4 border-l-4 border-red-500 bg-red-50 dark:bg-red-900/20 rounded-r-lg">
+                  <h3 class="text-lg font-bold text-red-700 dark:text-red-400 mb-4">FRAUD NOTIFICATION</h3>
+                  <div class="space-y-4">
+                    <p>Dear Merchant,</p>
+                    <p>It has become ever more Increasing that virtual airtime companies such as ourselves are being targeted with regards to the printing of virtual stock. Please under no circumstances provide any information to authenticate a voucher. The most that Blue Label Distribution employees will ask of you is the serial number but <span class="font-bold underline">NEVER</span> a pin number.</p>
+                    <p>Please notify your staff on this matter as criminals are very convincing and have already been successful in obtaining vouchers in this way. The onus is on the owner and their staff members in that this is taken in the strictest of light as Blue Label cannot be held accountable for any stock lost to the above circumstances.</p>
+                    <p>Yours sincerely,<br>Blue Label Distribution</p>
+                  </div>
+                </div>
+                
+                <div class="mt-6 p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                  <div class="flex items-start">
+                    <input type="checkbox" id="fraud-notification-ack" class="h-4 w-4 mt-1 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                    <label for="fraud-notification-ack" class="ml-2 block text-sm">
+                      I have read, understood, and acknowledge the Fraud Notification warning.
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md">
+            <div class="mb-4 p-3 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-md">
+              <p class="text-sm font-bold text-blue-600 dark:text-blue-400">* Please attach a copy of ID of owner/representative *</p>
+            </div>
+            
+            <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 mb-6">
+              <h3 class="text-md font-medium mb-3">Agreement Acknowledgment</h3>
+              <div class="flex items-start mb-4">
+                <div class="flex items-center h-5 mt-1">
+                  <input id="agreement-acknowledgment" name="agreement-acknowledgment" type="checkbox" required
+                    class="h-4 w-4 text-primary focus:ring-primary border-gray-300 dark:border-gray-700">
+                </div>
+                <label for="agreement-acknowledgment" class="ml-2 block text-sm text-gray-700 dark:text-gray-300">
+                  I confirm that I am authorized to enter into this agreement on behalf of the Outlet/Merchant and acknowledge that this will form a binding contract with Blue Label Distribution (Pty) Ltd.
+                </label>
+              </div>
+            </div>
+            
+            <div class="mt-6">
+              <div class="mb-4">
+                <div class="flex flex-col sm:flex-row justify-between gap-4">
+                  <div class="flex-1">
+                    <label for="fullName" class="block text-sm font-medium mb-1">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-base">
+                  </div>
+                  <div class="flex-none sm:w-1/4">
+                    <label for="signatureDate" class="block text-sm font-medium mb-1">Date</label>
+                    <input type="date" id="signatureDate" name="signatureDate" class="w-full p-2 border border-gray-300 dark:border-gray-700 rounded text-base">
+                  </div>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  (print name) the duly authorized signatory of the outlet have read, understand and agree to be bound by the terms and
+                  conditions printed as per the signed contract and declare that the information given above is true and correct. Furthermore, I
+                  hereby authorize Blue Label Distribution to perform a credit search on our credit profile with one or more of the registered Credit
+                  Bureau when assessing my application for credit, monitoring the credit applicants' payment behavior and using the new
+                  information obtained in respect of any future credit, record the existence for the applicant's account, record and transmit details
+                  of how the applicant performed, and how the account is conducted in meeting these obligations.
+                </p>
+              </div>
+              
+              <div class="mt-6">
+                <div class="flex-1">
+                  <p class="text-sm font-medium mb-2">Signature:</p>
+                  <div class="signature-container w-full border border-gray-300 dark:border-gray-700 rounded bg-white dark:bg-gray-800 relative" style="min-height: 120px">
+                    <canvas id="signature" class="w-full h-full absolute top-0 left-0"></canvas>
+                  </div>
+                  <div class="flex justify-between mt-2">
+                    <button type="button" id="clearSignature" 
+                      class="px-3 py-1 text-xs bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded text-gray-700 dark:text-gray-300">
+                      Clear Signature
+                    </button>
+                    <p class="text-xs text-gray-500 italic">Sign using mouse or touch</p>
+                  </div>
+                  <p id="signatureError" class="text-red-500 text-sm mt-1 hidden">Signature is required</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5: Preview -->
+      <div id="step5" class="hidden mb-8">
+        <div class="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg mb-6">
+          <h2 class="text-xl font-semibold mb-1">Preview & Submit</h2>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Please review your completed form before submission</p>
+        </div>
+        
+        <div class="mb-6 flex justify-end space-x-4">
+          <button id="printBtn" type="button" class="px-4 py-2 inline-flex items-center border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+            </svg>
+            Print Form
+          </button>
+          <button id="emailBtn" type="button" class="px-4 py-2 inline-flex items-center border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+            Email Form
+          </button>
+        </div>
+        
+        <!-- Preview content with page breaks -->
+        <div id="preview-container" class="border border-gray-300 dark:border-gray-700 rounded-md p-4 mb-6">
+          <!-- Page 1: Business Information -->
+          <section class="preview-page mb-8 pb-8 border-b-2 border-dashed border-gray-300 dark:border-gray-700">
+            <h2 class="text-xl font-bold mb-4 page-header">Business Information</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Trading Name:</h3>
+                <p id="preview-tradingName" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Registered Name:</h3>
+                <p id="preview-registeredName" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Registration Number:</h3>
+                <p id="preview-regNumber" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">VAT Number:</h3>
+                <p id="preview-vatNumber" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Business Type:</h3>
+                <p id="preview-businessType" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Nature of Business:</h3>
+                <p id="preview-natureOfBusiness" class="mb-2">-</p>
+              </div>
+            </div>
+            
+            <h3 class="text-md font-medium mt-6 mb-3">Contact Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Physical Address:</h3>
+                <p id="preview-physicalAddress" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Postal Address:</h3>
+                <p id="preview-postalAddress" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Primary Contact:</h3>
+                <p id="preview-primaryContact" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Telephone:</h3>
+                <p id="preview-telephoneNumber" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Email:</h3>
+                <p id="preview-email" class="mb-2">-</p>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Page 2: Account Details -->
+          <section class="preview-page mb-8 pb-8 border-b-2 border-dashed border-gray-300 dark:border-gray-700">
+            <h2 class="text-xl font-bold mb-4 page-header">Account Details</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Account Type:</h3>
+                <p id="preview-accountType" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Equipment Option:</h3>
+                <p id="preview-equipmentOption" class="mb-2">-</p>
+              </div>
+            </div>
+            
+            <h3 class="text-md font-medium mt-6 mb-3">Banking Information</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Account Name:</h3>
+                <p id="preview-accountName" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Bank Name:</h3>
+                <p id="preview-bankName" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Account Number:</h3>
+                <p id="preview-accountNumber" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Branch Name:</h3>
+                <p id="preview-branchName" class="mb-2">-</p>
+              </div>
+              <div>
+                <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Branch Code:</h3>
+                <p id="preview-branchCode" class="mb-2">-</p>
+              </div>
+            </div>
+            
+            <div id="preview-creditDetails" class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-md hidden">
+              <h3 class="text-md font-medium mb-3">Credit Facility Details</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Credit Terms:</h3>
+                  <p id="preview-creditTerms" class="mb-2">-</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Surety Name:</h3>
+                  <p id="preview-suretyName" class="mb-2">-</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <!-- Page 3: Services -->
+          <section class="preview-page mb-8 pb-8 border-b-2 border-dashed border-gray-300 dark:border-gray-700">
+            <h2 class="text-xl font-bold mb-4 page-header">Selected Services</h2>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Airtime & Data Services</h3>
+              <div id="preview-airtime" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected networks -->
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Electricity Providers</h3>
+              <div id="preview-electricity" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected providers -->
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Bill Payment Services</h3>
+              <div id="preview-billPayments" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected services -->
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Money Transfer Services</h3>
+              <div id="preview-moneyTransfers" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected services -->
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Entertainment Services</h3>
+              <div id="preview-entertainment" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected services -->
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Ticketing Services</h3>
+              <div id="preview-ticketing" class="flex flex-wrap gap-2">
+                <!-- Will be populated with selected services -->
+              </div>
+            </div>
+          </section>
+          
+          <!-- Page 4: Terms & Agreement -->
+          <section class="preview-page">
+            <h2 class="text-xl font-bold mb-4 page-header">Agreement Information</h2>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Terms & Conditions</h3>
+              <div class="p-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-md">
+                <ul class="space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Customer Agreement</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Airtime Vouchers Terms & Conditions</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Electricity Terms & Conditions</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Bill Payments Terms & Conditions</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>DSTV (Multichoice) Terms & Conditions</span>
+                  </li>
+                  <li class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
+                    <span>Fraud Notification Acknowledgment</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Authorized Representative</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Full Name:</h3>
+                  <p id="preview-fullName" class="mb-2">-</p>
+                </div>
+                <div>
+                  <h3 class="text-sm font-medium text-gray-500 dark:text-gray-400">Date:</h3>
+                  <p id="preview-signatureDate" class="mb-2">-</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-4">
+              <h3 class="text-md font-medium mb-2">Terms & Conditions Acceptance</h3>
+              <p id="preview-termsAccepted" class="p-2 bg-green-50 dark:bg-green-900/20 text-green-800 dark:text-green-200 rounded">
+                I confirm that I am authorized to enter into this agreement on behalf of the Outlet/Merchant and acknowledge that this will form a binding contract with Blue Label Distribution (Pty) Ltd.
+              </p>
+            </div>
+            
+            <div class="mt-6">
+              <h3 class="text-md font-medium mb-2">Signature</h3>
+              <div id="preview-signature" class="border border-gray-300 dark:border-gray-700 rounded p-4 h-32 flex items-center justify-center bg-white dark:bg-gray-800">
+                <p class="text-gray-400">Signature will appear on the final document</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        
+        <!-- Submit button at the bottom of preview page -->
+        <div class="flex justify-center">
+          <button id="finalSubmitBtn" class="px-6 py-2.5 bg-green-600 hover:bg-green-700 text-white font-medium rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            Submit Application
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <div class="flex justify-between mt-8">
+        <button id="prevBtn" type="button" class="hidden px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+          Previous
+        </button>
+        <button id="nextBtn" type="button" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+          Next
+        </button>
+        <button id="submitBtn" type="button" class="hidden px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+          Submit Application
+        </button>
+      </div>
+    </div>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden text-center py-10">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-green-500 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+      </svg>
+      <h3 class="text-2xl font-bold mb-2">Application Submitted Successfully!</h3>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">Thank you for completing the Blue Label Distribution application process.</p>
+      <p class="text-gray-600 dark:text-gray-400 mb-6">A representative will contact you shortly to finalize your onboarding.</p>
+      <button id="resetForm" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90">
+        Submit Another Application
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode detection
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark');
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      if (event.matches) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    });
+    
+    // Form steps navigation
+    const step1 = document.getElementById('step1');
+    const step2 = document.getElementById('step2');
+    const step3 = document.getElementById('step3');
+    const step4 = document.getElementById('step4');
+    const step5 = document.getElementById('step5');
+    
+    const step1Indicator = document.getElementById('step1-indicator');
+    const step2Indicator = document.getElementById('step2-indicator');
+    const step3Indicator = document.getElementById('step3-indicator');
+    const step4Indicator = document.getElementById('step4-indicator');
+    const step5Indicator = document.getElementById('step5-indicator');
+    
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    const finalSubmitBtn = document.getElementById('finalSubmitBtn');
+    
+    let currentStep = 1;
+    
+    // Debug function to help identify issues
+    function logNavigationState() {
+      console.log('Current step:', currentStep);
+      console.log('Next button:', nextBtn.classList.contains('hidden') ? 'hidden' : 'visible');
+      console.log('Submit button:', submitBtn.classList.contains('hidden') ? 'hidden' : 'visible');
+    }
+    
+    function updateStep(stepNumber) {
+      console.log('Updating to step:', stepNumber);
+      
+      // Hide all steps
+      step1.classList.add('hidden');
+      step2.classList.add('hidden');
+      step3.classList.add('hidden');
+      step4.classList.add('hidden');
+      step5.classList.add('hidden');
+      
+      // Reset all indicators
+      step1Indicator.querySelector('div').classList.remove('bg-primary', 'text-white');
+      step1Indicator.querySelector('div').classList.add('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+      
+      step2Indicator.querySelector('div').classList.remove('bg-primary', 'text-white');
+      step2Indicator.querySelector('div').classList.add('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+      
+      step3Indicator.querySelector('div').classList.remove('bg-primary', 'text-white');
+      step3Indicator.querySelector('div').classList.add('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+      
+      step4Indicator.querySelector('div').classList.remove('bg-primary', 'text-white');
+      step4Indicator.querySelector('div').classList.add('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+      
+      step5Indicator.querySelector('div').classList.remove('bg-primary', 'text-white');
+      step5Indicator.querySelector('div').classList.add('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+      
+      // Show and set up navigation for the current step
+      if (stepNumber === 1) {
+        step1.classList.remove('hidden');
+        step1Indicator.querySelector('div').classList.remove('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+        step1Indicator.querySelector('div').classList.add('bg-primary', 'text-white');
+        
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } 
+      else if (stepNumber === 2) {
+        step2.classList.remove('hidden');
+        step2Indicator.querySelector('div').classList.remove('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+        step2Indicator.querySelector('div').classList.add('bg-primary', 'text-white');
+        
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } 
+      else if (stepNumber === 3) {
+        step3.classList.remove('hidden');
+        step3Indicator.querySelector('div').classList.remove('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+        step3Indicator.querySelector('div').classList.add('bg-primary', 'text-white');
+        
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.add('hidden');
+      } 
+      else if (stepNumber === 4) {
+        step4.classList.remove('hidden');
+        step4Indicator.querySelector('div').classList.remove('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+        step4Indicator.querySelector('div').classList.add('bg-primary', 'text-white');
+        
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+        submitBtn.classList.remove('hidden');
+        
+        // Reinitialize the signature canvas if it exists
+        if (document.getElementById('signature')) {
+          setTimeout(() => {
+            setupSignatureCanvas('signature', 'clearSignature');
+          }, 50);
+        }
+      }
+      else if (stepNumber === 5) {
+        // First populate preview with form data
+        populatePreview();
+        
+        step5.classList.remove('hidden');
+        step5Indicator.querySelector('div').classList.remove('bg-gray-300', 'dark:bg-gray-700', 'text-gray-600', 'dark:text-gray-400');
+        step5Indicator.querySelector('div').classList.add('bg-primary', 'text-white');
+        
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.add('hidden');
+        submitBtn.classList.add('hidden');
+      }
+      
+      currentStep = stepNumber;
+    }
+    
+    // Function to try to change step when clicking on step indicators
+    function tryChangeStep(stepNumber) {
+      updateStep(stepNumber);
+    }
+    
+    nextBtn.addEventListener('click', function() {
+      // For debugging
+      console.log('Next button clicked, current step:', currentStep);
+      
+      // Move to next step based on current step
+      if (currentStep === 1) {
+        updateStep(2);
+      } else if (currentStep === 2) {
+        updateStep(3);
+      } else if (currentStep === 3) {
+        updateStep(4);
+      } else if (currentStep === 4) {
+        validateAndContinue();
+      }
+    });
+    
+    function validateAndContinue() {
+      let isValid = true;
+      
+      // Check if all T&Cs are acknowledged
+      const customerAck = document.getElementById('customer-agreement-ack');
+      const airtimeAck = document.getElementById('airtime-vouchers-ack');
+      const electricityAck = document.getElementById('electricity-ack');
+      const billPaymentsAck = document.getElementById('bill-payments-ack');
+      const dstvAck = document.getElementById('dstv-ack');
+      const fraudAck = document.getElementById('fraud-notification-ack');
+      
+      // Ensure primary agreement is acknowledged
+      const agreement = document.getElementById('agreement-acknowledgment');
+      if (!agreement.checked) {
+        agreement.classList.add('border-red-500');
+        isValid = false;
+      } else {
+        agreement.classList.remove('border-red-500');
+      }
+      
+      // Check if signature exists
+      const signatureCanvas = document.getElementById('signature');
+      if (signatureCanvas) {
+        try {
+          // Direct canvas check for signature
+          const ctx = signatureCanvas.getContext('2d');
+          const imageData = ctx.getImageData(0, 0, signatureCanvas.width, signatureCanvas.height).data;
+          const hasSignature = imageData.some(channel => channel !== 0);
+          
+          const errorMsg = document.getElementById('signatureError');
+          if (!hasSignature) {
+            if (errorMsg) errorMsg.classList.remove('hidden');
+            isValid = false;
+          } else {
+            if (errorMsg) errorMsg.classList.add('hidden');
+          }
+        } catch (error) {
+          console.error("Error checking signature:", error);
+        }
+      }
+      
+      // For demo purposes, allowing to proceed even if not all terms are checked
+      // But in production, you'd want to ensure all are checked
+      if ((!customerAck || !customerAck.checked) || 
+          (!airtimeAck || !airtimeAck.checked) || 
+          (!electricityAck || !electricityAck.checked) || 
+          (!billPaymentsAck || !billPaymentsAck.checked) || 
+          (!dstvAck || !dstvAck.checked) || 
+          (!fraudAck || !fraudAck.checked)) {
+        
+        // Show a warning dialog but allow to proceed
+        alert("Please acknowledge all terms and conditions before continuing. For demo purposes, you can proceed anyway.");
+      }
+      
+      if (isValid) {
+        updateStep(5);
+      } else {
+        alert("Please review the form for errors. You must sign the form and agree to the terms.");
+      }
+    }
+    
+    prevBtn.addEventListener('click', function() {
+      if (currentStep > 1) {
+        updateStep(currentStep - 1);
+      }
+    });
+    
+    submitBtn.addEventListener('click', function() {
+      validateAndContinue();
+    });
+    
+    finalSubmitBtn.addEventListener('click', function() {
+      // Show the success message and hide the form
+      document.getElementById('formContainer').classList.add('hidden');
+      document.getElementById('successMessage').classList.remove('hidden');
+      
+      // Scroll to the top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Setup signature canvas functionality
+    function setupSignatureCanvas(canvasId, clearBtnId) {
+      const canvas = document.getElementById(canvasId);
+      if (!canvas) return;
+      
+      // Remove any previous event listeners to avoid duplication
+      const newCanvas = canvas.cloneNode(true);
+      canvas.parentNode.replaceChild(newCanvas, canvas);
+      
+      const ctx = newCanvas.getContext('2d');
+      let isDrawing = false;
+      let lastX = 0;
+      let lastY = 0;
+      let hasSignature = false;
+      
+      // Set correct canvas dimensions
+      function resizeCanvas() {
+        const rect = newCanvas.getBoundingClientRect();
+        newCanvas.width = rect.width;
+        newCanvas.height = rect.height;
+        
+        // Configure stroke style
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = document.documentElement.classList.contains('dark') ? '#fff' : '#000';
+        
+        // Add helper text or guide
+        ctx.font = '14px Arial';
+        ctx.fillStyle = 'rgba(180, 180, 180, 0.7)';
+        ctx.textAlign = 'center'; 
+        ctx.fillText('Sign here', newCanvas.width / 2, newCanvas.height / 2);
+      }
+      
+      // Initialize canvas
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      
+      // Drawing functions
+      function startDrawing(e) {
+        e.preventDefault();
+        isDrawing = true;
+        
+        // Clear the helper text on first drawing
+        if (!hasSignature) {
+          ctx.clearRect(0, 0, newCanvas.width, newCanvas.height);
+          hasSignature = true;
+        }
+        
+        // Get coordinates
+        const rect = newCanvas.getBoundingClientRect();
+        lastX = (e.clientX || e.touches?.[0]?.clientX) - rect.left;
+        lastY = (e.clientY || e.touches?.[0]?.clientY) - rect.top;
+      }
+      
+      function draw(e) {
+        e.preventDefault();
+        if (!isDrawing) return;
+        
+        // Get current position
+        const rect = newCanvas.getBoundingClientRect();
+        const currentX = (e.clientX || e.touches?.[0]?.clientX) - rect.left;
+        const currentY = (e.clientY || e.touches?.[0]?.clientY) - rect.top;
+        
+        // Draw line
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(currentX, currentY);
+        ctx.stroke();
+        
+        // Update last position
+        lastX = currentX;
+        lastY = currentY;
+      }
+      
+      function stopDrawing(e) {
+        if (e) e.preventDefault();
+        isDrawing = false;
+      }
+      
+      // Mouse events
+      newCanvas.addEventListener('mousedown', startDrawing);
+      newCanvas.addEventListener('mousemove', draw);
+      newCanvas.addEventListener('mouseup', stopDrawing);
+      newCanvas.addEventListener('mouseout', stopDrawing);
+      
+      // Touch events
+      newCanvas.addEventListener('touchstart', startDrawing);
+      newCanvas.addEventListener('touchmove', draw);
+      newCanvas.addEventListener('touchend', stopDrawing);
+      newCanvas.addEventListener('touchcancel', stopDrawing);
+      
+      // Clear button
+      const clearBtn = document.getElementById(clearBtnId);
+      if (clearBtn) {
+        clearBtn.addEventListener('click', function() {
+          ctx.clearRect(0, 0, newCanvas.width, newCanvas.height);
+          hasSignature = false;
+          
+          // Redraw the helper text
+          ctx.font = '14px Arial';
+          ctx.fillStyle = 'rgba(180, 180, 180, 0.7)';
+          ctx.textAlign = 'center'; 
+          ctx.fillText('Sign here', newCanvas.width / 2, newCanvas.height / 2);
+          
+          // Hide error message if present
+          const errorMsg = document.getElementById('signatureError');
+          if (errorMsg) errorMsg.classList.add('hidden');
+        });
+      }
+      
+      return {
+        canvas: newCanvas,
+        ctx: ctx,
+        hasSignature: () => hasSignature
+      };
+    }
+    
+    // Function to populate the preview page with form data
+    function populatePreview() {
+      console.log("Populating preview with form data");
+      
+      // Business Information
+      document.getElementById('preview-tradingName').textContent = document.querySelector('input[name="tradingName"]').value || '-';
+      document.getElementById('preview-registeredName').textContent = document.querySelector('input[name="businessName"]').value || '-';
+      document.getElementById('preview-regNumber').textContent = document.querySelector('input[name="regNumber"]').value || '-';
+      document.getElementById('preview-vatNumber').textContent = document.querySelector('input[name="vatNumber"]').value || '-';
+      document.getElementById('preview-natureOfBusiness').textContent = document.querySelector('input[name="natureOfBusiness"]').value || '-';
+      
+      // Get business type from radio buttons
+      const businessTypeRadio = document.querySelector('input[name="businessType"]:checked');
+      document.getElementById('preview-businessType').textContent = businessTypeRadio ? businessTypeRadio.value : '-';
+      
+      // Contact information
+      document.getElementById('preview-physicalAddress').textContent = document.querySelector('textarea[name="physicalAddress"]')?.value || '-';
+      document.getElementById('preview-postalAddress').textContent = document.querySelector('textarea[name="postalAddress"]')?.value || '-';
+      document.getElementById('preview-primaryContact').textContent = document.querySelector('input[name="contactName"]').value || '-';
+      document.getElementById('preview-telephoneNumber').textContent = document.querySelector('input[name="contactNumber"]').value || '-';
+      document.getElementById('preview-email').textContent = document.querySelector('input[name="email"]').value || '-';
+      
+      // Account information
+      let accountTypes = [];
+      if (document.getElementById('cashAccount')?.checked) accountTypes.push('Cash Account');
+      if (document.getElementById('creditFacility')?.checked) accountTypes.push('Credit Facility');
+      if (document.getElementById('debitOrder')?.checked) accountTypes.push('Debit Order');
+      document.getElementById('preview-accountType').textContent = accountTypes.length > 0 ? accountTypes.join(', ') : '-';
+      
+      // Equipment option
+      const equipmentOption = document.querySelector('input[name="contractOption"]:checked');
+      document.getElementById('preview-equipmentOption').textContent = equipmentOption ? equipmentOption.value : '-';
+      
+      // Banking information
+      document.getElementById('preview-accountName').textContent = document.querySelector('input[name="accountName"]').value || '-';
+      document.getElementById('preview-bankName').textContent = document.querySelector('select[name="bankName"]').value || '-';
+      document.getElementById('preview-accountNumber').textContent = document.querySelector('input[name="accountNumber"]').value || '-';
+      document.getElementById('preview-branchName').textContent = document.querySelector('input[name="branchName"]').value || '-';
+      document.getElementById('preview-branchCode').textContent = document.querySelector('input[name="branchCode"]').value || '-';
+      
+      // Credit facility section
+      if (document.getElementById('creditFacility')?.checked) {
+        document.getElementById('preview-creditDetails').classList.remove('hidden');
+        
+        // Credit terms from credit facility
+        const consignment = document.querySelector('input[name="consignment"]')?.value || '-';
+        const revolvingFacility = document.querySelector('input[name="revolvingFacility"]')?.value || '-';
+        document.getElementById('preview-creditTerms').textContent = 
+          `Consignment: ${consignment}, Revolving Facility: ${revolvingFacility}`;
+        
+        // Surety name
+        document.getElementById('preview-suretyName').textContent = document.querySelector('input[name="suretyName"]')?.value || '-';
+      } else {
+        document.getElementById('preview-creditDetails').classList.add('hidden');
+      }
+      
+      // Services
+      // Airtime & Data
+      const airtimeContainer = document.getElementById('preview-airtime');
+      airtimeContainer.innerHTML = '';
+      document.querySelectorAll('.airtime-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        airtimeContainer.appendChild(badge);
+      });
+      if (airtimeContainer.childElementCount === 0) {
+        airtimeContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No services selected</p>';
+      }
+      
+      // Electricity
+      const electricityContainer = document.getElementById('preview-electricity');
+      electricityContainer.innerHTML = '';
+      document.querySelectorAll('.electricity-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        electricityContainer.appendChild(badge);
+      });
+      // Also add any selected from dropdown
+      document.querySelectorAll('#selectedElectricityProviders [data-value]').forEach(badge => {
+        const newBadge = createServiceBadge(badge.dataset.value);
+        electricityContainer.appendChild(newBadge);
+      });
+      if (electricityContainer.childElementCount === 0) {
+        electricityContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No providers selected</p>';
+      }
+      
+      // Bill Payments
+      const billPaymentsContainer = document.getElementById('preview-billPayments');
+      billPaymentsContainer.innerHTML = '';
+      document.querySelectorAll('.bill-payment-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        billPaymentsContainer.appendChild(badge);
+      });
+      if (billPaymentsContainer.childElementCount === 0) {
+        billPaymentsContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No services selected</p>';
+      }
+      
+      // Money Transfers
+      const moneyTransfersContainer = document.getElementById('preview-moneyTransfers');
+      moneyTransfersContainer.innerHTML = '';
+      document.querySelectorAll('.money-transfer-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        moneyTransfersContainer.appendChild(badge);
+      });
+      if (moneyTransfersContainer.childElementCount === 0) {
+        moneyTransfersContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No services selected</p>';
+      }
+      
+      // Entertainment
+      const entertainmentContainer = document.getElementById('preview-entertainment');
+      entertainmentContainer.innerHTML = '';
+      document.querySelectorAll('.entertainment-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        entertainmentContainer.appendChild(badge);
+      });
+      // Check if "No Gaming" is checked
+      if (document.getElementById('noGaming')?.checked) {
+        const noGamingBadge = createServiceBadge('No Gaming Activated', 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300');
+        entertainmentContainer.appendChild(noGamingBadge);
+      }
+      if (entertainmentContainer.childElementCount === 0) {
+        entertainmentContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No services selected</p>';
+      }
+      
+      // Ticketing
+      const ticketingContainer = document.getElementById('preview-ticketing');
+      ticketingContainer.innerHTML = '';
+      document.querySelectorAll('.ticketing-checkbox:checked').forEach(checkbox => {
+        const badge = createServiceBadge(checkbox.value);
+        ticketingContainer.appendChild(badge);
+      });
+      if (ticketingContainer.childElementCount === 0) {
+        ticketingContainer.innerHTML = '<p class="text-gray-500 dark:text-gray-400">No services selected</p>';
+      }
+      
+      // Agreement Information
+      document.getElementById('preview-fullName').textContent = document.getElementById('fullName').value || '-';
+      document.getElementById('preview-signatureDate').textContent = document.getElementById('signatureDate').value || '-';
+      
+      // If there's a signature, display it in the preview
+      const signatureCanvas = document.getElementById('signature');
+      if (signatureCanvas) {
+        const previewSignature = document.getElementById('preview-signature');
+        
+        try {
+          // Make sure the canvas has dimensions before trying to get image data
+          if (signatureCanvas.width > 0 && signatureCanvas.height > 0) {
+            const ctx = signatureCanvas.getContext('2d');
+            const imageData = ctx.getImageData(0, 0, signatureCanvas.width, signatureCanvas.height).data;
+            const hasSignature = imageData.some(channel => channel !== 0);
+            
+            if (hasSignature) {
+              // Clear placeholder text
+              previewSignature.innerHTML = '';
+              // Create new canvas for preview
+              const previewCanvas = document.createElement('canvas');
+              previewCanvas.width = previewSignature.clientWidth || 300; // Default width if clientWidth is 0
+              previewCanvas.height = previewSignature.clientHeight || 150; // Default height if clientHeight is 0
+              const previewCtx = previewCanvas.getContext('2d');
+              
+              // Draw the original signature onto the preview canvas
+              previewCtx.drawImage(signatureCanvas, 0, 0, previewCanvas.width, previewCanvas.height);
+              previewSignature.appendChild(previewCanvas);
+            }
+          } else {
+            console.log("Canvas has no dimensions yet, can't check for signature");
+          }
+        } catch (error) {
+          console.error("Error handling signature preview:", error);
+          // Leave the default placeholder text
+        }
+      }
+    }
+    
+    // Helper function to create service badges
+    function createServiceBadge(text, customClass = 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300') {
+      const badge = document.createElement('div');
+      badge.className = `inline-flex items-center px-2.5 py-1 rounded text-xs font-medium ${customClass} mr-2 mb-2`;
+      badge.textContent = text;
+      return badge;
+    }
+    
+    // Function to handle terms and conditions tab switching
+    function showTermsTab(tabId) {
+      // Hide all tabs
+      document.getElementById('terms-customer-agreement').classList.add('hidden');
+      document.getElementById('terms-airtime-vouchers').classList.add('hidden');
+      document.getElementById('terms-electricity').classList.add('hidden');
+      document.getElementById('terms-bill-payments').classList.add('hidden');
+      document.getElementById('terms-dstv').classList.add('hidden');
+      document.getElementById('terms-surety-agreement').classList.add('hidden');
+      document.getElementById('terms-fraud-notification').classList.add('hidden');
+      
+      // Reset all tab buttons
+      document.getElementById('tab-customer-agreement').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-customer-agreement').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-airtime-vouchers').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-airtime-vouchers').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-electricity').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-electricity').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-bill-payments').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-bill-payments').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-dstv').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-dstv').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-surety-agreement').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-surety-agreement').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      document.getElementById('tab-fraud-notification').classList.remove('text-primary', 'border-b-2', 'border-primary');
+      document.getElementById('tab-fraud-notification').classList.add('text-gray-600', 'dark:text-gray-400');
+      
+      // Show selected tab
+      document.getElementById('terms-' + tabId).classList.remove('hidden');
+      
+      // Highlight selected tab button
+      document.getElementById('tab-' + tabId).classList.remove('text-gray-600', 'dark:text-gray-400');
+      document.getElementById('tab-' + tabId).classList.add('text-primary', 'border-b-2', 'border-primary');
+    }
+    
+    // Initialize functionality on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log("DOM loaded, initializing form");
+      
+      // Initialize the signature canvas
+      setupSignatureCanvas('signature', 'clearSignature');
+      
+      // Shareholder functionality
+      const addShareholderBtn = document.getElementById('addShareholderBtn');
+      if (addShareholderBtn) {
+        let shareholderCount = 3; // We already have 3 shareholders by default
+        
+        addShareholderBtn.addEventListener('click', function() {
+          shareholderCount++;
+          const shareholdersContainer = addShareholderBtn.closest('.border-b');
+          
+          // Create a new shareholder row
+          const newShareholderRow = document.createElement('div');
+          newShareholderRow.className = 'grid grid-cols-4 border-b border-gray-300 dark:border-gray-700';
+          newShareholderRow.innerHTML = `
+            <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <label class="block text-sm font-medium">Shareholder ${shareholderCount} Name</label>
+              <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+            </div>
+            <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <label class="block text-sm font-medium">Address</label>
+              <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+            </div>
+            <div class="p-3 border-r border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <label class="block text-sm font-medium">Telephone No</label>
+              <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+            </div>
+            <div class="p-3 bg-white dark:bg-gray-900">
+              <label class="block text-sm font-medium">ID Number</label>
+              <input type="text" class="w-full mt-1 p-2 border border-gray-300 dark:border-gray-700 rounded text-sm">
+            </div>
+          `;
+          
+          // Insert the new row before the Add More button container
+          shareholdersContainer.insertBefore(newShareholderRow, addShareholderBtn.parentNode);
+        });
+      }
+      
+      // Electricity Provider functionality
+      const addElectricityProviderBtn = document.getElementById('addElectricityProvider');
+      const providerDropdown = document.getElementById('additionalElectricityProvider');
+      const selectedProvidersContainer = document.getElementById('selectedElectricityProviders');
+      
+      if (addElectricityProviderBtn && providerDropdown && selectedProvidersContainer) {
+        // Set of selected providers to avoid duplicates
+        const selectedProviders = new Set();
+        
+        addElectricityProviderBtn.addEventListener('click', function() {
+          const selectedValue = providerDropdown.value;
+          const selectedText = providerDropdown.options[providerDropdown.selectedIndex].text;
+          
+          if (selectedValue && !selectedProviders.has(selectedValue)) {
+            // Add to tracking set
+            selectedProviders.add(selectedValue);
+            
+            // Create badge for the selected provider
+            const badge = document.createElement('div');
+            badge.className = 'inline-flex items-center px-2.5 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
+            badge.dataset.value = selectedValue;
+            
+            badge.innerHTML = `
+              ${selectedText}
+              <button type="button" class="ml-1 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" aria-label="Remove">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            `;
+            
+            // Add remove button functionality
+            const removeBtn = badge.querySelector('button');
+            removeBtn.addEventListener('click', function() {
+              badge.remove();
+              selectedProviders.delete(selectedValue);
+              
+              // Create a hidden input to track the selected provider
+              const hiddenInput = document.querySelector(`input[name="electricity-provider-${selectedValue}"]`);
+              if (hiddenInput) {
+                hiddenInput.remove();
+              }
+            });
+            
+            // Add to the container
+            selectedProvidersContainer.appendChild(badge);
+            
+            // Create a hidden input to track the selected provider
+            const hiddenInput = document.createElement('input');
+            hiddenInput.type = 'hidden';
+            hiddenInput.name = `electricity-provider-${selectedValue}`;
+            hiddenInput.value = selectedValue;
+            selectedProvidersContainer.appendChild(hiddenInput);
+            
+            // Reset dropdown
+            providerDropdown.value = '';
+          }
+        });
+        
+        // Also allow adding provider by pressing Enter in the dropdown
+        providerDropdown.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter') {
+            e.preventDefault();
+            addElectricityProviderBtn.click();
+          }
+        });
+      }
+      
+      // Select All buttons
+      const selectAllAirtimeBtn = document.getElementById('selectAllAirtime');
+      if (selectAllAirtimeBtn) {
+        selectAllAirtimeBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.airtime-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select All' : 'Deselect All';
+        });
+      }
+      
+      // Select common electricity providers button
+      const selectAllCommonProvidersBtn = document.getElementById('selectAllCommonProviders');
+      if (selectAllCommonProvidersBtn) {
+        selectAllCommonProvidersBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.electricity-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select Standard' : 'Deselect Standard';
+        });
+      }
+      
+      // Select/Deselect ALL electricity providers (including dropdown options)
+      const selectAllElectricityProvidersBtn = document.getElementById('selectAllElectricityProviders');
+      if (selectAllElectricityProvidersBtn) {
+        selectAllElectricityProvidersBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.electricity-checkbox');
+          const selectedProvidersContainer = document.getElementById('selectedElectricityProviders');
+          const badges = document.querySelectorAll('#selectedElectricityProviders [data-value]');
+          
+          // Check if there are any selected providers (either checkboxes or badges)
+          const anyCheckboxesChecked = Array.from(checkboxes).some(cb => cb.checked);
+          const anyBadgesPresent = badges.length > 0;
+          
+          // If anything is selected, deselect all. Otherwise, select all.
+          if (anyCheckboxesChecked || anyBadgesPresent) {
+            // DESELECT ALL: Uncheck all common provider checkboxes
+            checkboxes.forEach(checkbox => {
+              checkbox.checked = false;
+            });
+            
+            // Remove all selected provider badges
+            badges.forEach(badge => badge.remove());
+            
+            // Remove all hidden inputs for providers
+            document.querySelectorAll('input[name^="electricity-provider-"]').forEach(input => {
+              input.remove();
+            });
+            
+            // Update button text
+            this.textContent = 'Select All Providers';
+            
+            // Show feedback
+            const messageEl = document.createElement('div');
+            messageEl.className = 'mt-2 text-sm text-red-600 dark:text-red-400 animate-pulse';
+            messageEl.textContent = 'All providers deselected!';
+            selectedProvidersContainer.appendChild(messageEl);
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+              if (messageEl.parentNode) {
+                messageEl.remove();
+              }
+            }, 3000);
+            
+          } else {
+            // SELECT ALL: Check all common provider checkboxes
+            checkboxes.forEach(checkbox => {
+              checkbox.checked = true;
+            });
+            
+            // Get all options from the dropdown
+            const providerDropdown = document.getElementById('additionalElectricityProvider');
+            const selectedProviders = new Set();
+            
+            // Add all providers from dropdown
+            for (let i = 1; i < providerDropdown.options.length; i++) {
+              const option = providerDropdown.options[i];
+              const value = option.value;
+              const text = option.text;
+              
+              // Add to tracking set
+              selectedProviders.add(value);
+              
+              // Create badge
+              const badge = document.createElement('div');
+              badge.className = 'inline-flex items-center px-2.5 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300';
+              badge.dataset.value = value;
+              
+              badge.innerHTML = `
+                ${text}
+                <button type="button" class="ml-1 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" aria-label="Remove">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+              `;
+              
+              // Add remove button functionality
+              const removeBtn = badge.querySelector('button');
+              removeBtn.addEventListener('click', function() {
+                badge.remove();
+                
+                // Remove hidden input
+                const hiddenInput = document.querySelector(`input[name="electricity-provider-${value}"]`);
+                if (hiddenInput) {
+                  hiddenInput.remove();
+                }
+                
+                // Check if there are any selections left
+                const anyCheckboxChecked = Array.from(document.querySelectorAll('.electricity-checkbox')).some(cb => cb.checked);
+                const anyBadgesLeft = document.querySelectorAll('#selectedElectricityProviders [data-value]').length > 0;
+                
+                // If nothing is selected, update button text
+                if (!anyCheckboxChecked && !anyBadgesLeft) {
+                  document.getElementById('selectAllElectricityProviders').textContent = 'Select All Providers';
+                }
+              });
+              
+              // Add to container
+              selectedProvidersContainer.appendChild(badge);
+              
+              // Add hidden input
+              const hiddenInput = document.createElement('input');
+              hiddenInput.type = 'hidden';
+              hiddenInput.name = `electricity-provider-${value}`;
+              hiddenInput.value = value;
+              selectedProvidersContainer.appendChild(hiddenInput);
+            }
+            
+            // Update button text
+            this.textContent = 'Deselect All Providers';
+            
+            // Show feedback
+            const messageEl = document.createElement('div');
+            messageEl.className = 'mt-2 text-sm text-green-600 dark:text-green-400 animate-pulse';
+            messageEl.textContent = 'All providers selected!';
+            selectedProvidersContainer.appendChild(messageEl);
+            
+            // Remove message after 3 seconds
+            setTimeout(() => {
+              if (messageEl.parentNode) {
+                messageEl.remove();
+              }
+            }, 3000);
+          }
+        });
+      }
+      
+      // Bill Payments select all button
+      const selectAllBillPaymentsBtn = document.getElementById('selectAllBillPayments');
+      if (selectAllBillPaymentsBtn) {
+        selectAllBillPaymentsBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.bill-payment-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select All' : 'Deselect All';
+        });
+      }
+      
+      // Money Transfer Services select all functionality
+      const selectAllMoneyTransfersBtn = document.getElementById('selectAllMoneyTransfers');
+      if (selectAllMoneyTransfersBtn) {
+        selectAllMoneyTransfersBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.money-transfer-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select All' : 'Deselect All';
+        });
+      }
+      
+      // Entertainment Services select all functionality
+      const selectAllEntertainmentBtn = document.getElementById('selectAllEntertainment');
+      if (selectAllEntertainmentBtn) {
+        selectAllEntertainmentBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.entertainment-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select All' : 'Deselect All';
+        });
+      }
+      
+      // Ticketing Services select all functionality
+      const selectAllTicketingBtn = document.getElementById('selectAllTicketing');
+      if (selectAllTicketingBtn) {
+        selectAllTicketingBtn.addEventListener('click', function() {
+          const checkboxes = document.querySelectorAll('.ticketing-checkbox');
+          const allChecked = Array.from(checkboxes).every(cb => cb.checked);
+          
+          checkboxes.forEach(checkbox => {
+            checkbox.checked = !allChecked;
+          });
+          
+          // Update button text based on state
+          this.textContent = allChecked ? 'Select All' : 'Deselect All';
+        });
+      }
+      
+      // Add functionality to show/hide surety agreement notice
+      const creditRequiredYes = document.getElementById('creditRequiredYes');
+      const creditRequiredNo = document.getElementById('creditRequiredNo');
+      const suretyAgreementNotice = document.getElementById('suretyAgreementNotice');
+      const viewSuretyAgreementBtn = document.getElementById('viewSuretyAgreement');
+      
+      if (creditRequiredYes && creditRequiredNo && suretyAgreementNotice) {
+        // Show notice when "Yes" is selected
+        creditRequiredYes.addEventListener('change', function() {
+          if (this.checked) {
+            suretyAgreementNotice.classList.remove('hidden');
+          }
+        });
+        
+        // Hide notice when "No" is selected
+        creditRequiredNo.addEventListener('change', function() {
+          if (this.checked) {
+            suretyAgreementNotice.classList.add('hidden');
+          }
+        });
+        
+        // Function to show surety agreement modal/tab
+        if (viewSuretyAgreementBtn) {
+          viewSuretyAgreementBtn.addEventListener('click', function() {
+            // Navigate to terms page and show surety agreement tab
+            updateStep(4);
+            showTermsTab('surety-agreement');
+          });
+        }
+      }
+      
+      // Reset form button
+      const resetFormBtn = document.getElementById('resetForm');
+      if (resetFormBtn) {
+        resetFormBtn.addEventListener('click', function() {
+          // Reset form fields
+          document.querySelectorAll('input, select, textarea').forEach(field => {
+            field.value = '';
+            field.checked = false;
+          });
+          
+          // Reset "Select All" button text
+          document.getElementById('selectAllAirtime').textContent = 'Select All';
+          document.getElementById('selectAllCommonProviders').textContent = 'Select Standard';
+          document.getElementById('selectAllElectricityProviders').textContent = 'Select All Providers';
+          document.getElementById('selectAllBillPayments').textContent = 'Select All';
+          document.getElementById('selectAllMoneyTransfers').textContent = 'Select All';
+          document.getElementById('selectAllEntertainment').textContent = 'Select All';
+          document.getElementById('selectAllTicketing').textContent = 'Select All';
+          
+          // Clear signature
+          const clearSignatureBtn = document.getElementById('clearSignature');
+          if (clearSignatureBtn) {
+            clearSignatureBtn.click();
+          }
+          
+          // Show form container and hide success message
+          document.getElementById('formContainer').classList.remove('hidden');
+          document.getElementById('successMessage').classList.add('hidden');
+          
+          // Reset to first step
+          updateStep(1);
+          
+          // Reset terms and conditions tab to first tab
+          showTermsTab('customer-agreement');
+        });
+      }
+      
+      // Print functionality
+      const printBtn = document.getElementById('printBtn');
+      if (printBtn) {
+        printBtn.addEventListener('click', function() {
+          // Open print dialog for the current page
+          // First add a specific CSS class that will trigger print-specific styles
+          document.body.classList.add('printing');
+          
+          // Create a clone of the preview container for printing
+          const printContent = document.getElementById('preview-container').cloneNode(true);
+          
+          // Create a new window/document for printing
+          const printWindow = window.open('', '_blank');
+          printWindow.document.write(`
+            <!DOCTYPE html>
+            <html>
+            <head>
+              <title>Blue Label Distribution Agreement</title>
+              <style>
+                @page {
+                  margin: 1.5cm;
+                }
+                body {
+                  font-family: Arial, sans-serif;
+                  line-height: 1.5;
+                  color: #000;
+                  background: #fff;
+                }
+                * {
+                  box-sizing: border-box;
+                }
+                .preview-page {
+                  page-break-after: always;
+                  margin-bottom: 30px;
+                  padding-bottom: 30px;
+                  border-bottom: 1px dashed #ccc;
+                }
+                .preview-page:last-child {
+                  page-break-after: avoid;
+                  border-bottom: none;
+                }
+                .page-header {
+                  font-size: 18px;
+                  font-weight: bold;
+                  margin-bottom: 15px;
+                  border-bottom: 2px solid #5D5CDE;
+                  padding-bottom: 8px;
+                }
+                h3 {
+                  font-size: 16px;
+                  font-weight: bold;
+                  margin: 15px 0 10px 0;
+                }
+                p {
+                  margin: 5px 0;
+                }
+                .grid {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 15px;
+                  margin-bottom: 15px;
+                }
+                .mb-4 {
+                  margin-bottom: 16px;
+                }
+                .font-medium {
+                  font-weight: 500;
+                }
+                .text-gray-500 {
+                  color: #6b7280;
+                }
+                .flex {
+                  display: flex;
+                  flex-wrap: wrap;
+                  gap: 8px;
+                }
+                .bg-blue-100 {
+                  background-color: #dbeafe;
+                  color: #1e40af;
+                  padding: 3px 8px;
+                  border-radius: 4px;
+                  display: inline-block;
+                  margin-right: 6px;
+                  margin-bottom: 6px;
+                  font-size: 12px;
+                }
+                .bg-red-100 {
+                  background-color: #fee2e2;
+                  color: #b91c1c;
+                  padding: 3px 8px;
+                  border-radius: 4px;
+                  display: inline-block;
+                  margin-right: 6px;
+                  margin-bottom: 6px;
+                  font-size: 12px;
+                }
+                .bg-green-50 {
+                  background-color: #ecfdf5;
+                  color: #064e3b;
+                  padding: 10px;
+                  border-radius: 4px;
+                }
+                .text-green-800 {
+                  color: #064e3b;
+                }
+                canvas {
+                  border: 1px solid #ddd;
+                  margin-top: 10px;
+                }
+                @media print {
+                  body {
+                    -webkit-print-color-adjust: exact !important;
+                    print-color-adjust: exact !important;
+                  }
+                  .no-print {
+                    display: none !important;
+                  }
+                }
+              </style>
+            </head>
+            <body>
+              <h1 style="text-align: center; color: #5D5CDE; margin-bottom: 20px;">Blue Label Distribution Agreement</h1>
+              <div>${printContent.innerHTML}</div>
+            </body>
+            </html>
+          `);
+          
+          // Wait for content to load then print
+          printWindow.document.close();
+          printWindow.addEventListener('load', function() {
+            printWindow.focus();
+            printWindow.print();
+            // printWindow.close(); // Optional - automatically close after print
+          });
+          
+          // Remove the print class after printing dialog opens
+          document.body.classList.remove('printing');
+        });
+      }
+      
+      // Email functionality (using mailto: link)
+      const emailBtn = document.getElementById('emailBtn');
+      if (emailBtn) {
+        emailBtn.addEventListener('click', function() {
+          // Gather form information for email
+          const businessName = document.querySelector('input[name="businessName"]').value || 'Unnamed Business';
+          const email = document.querySelector('input[name="email"]').value || '';
+          
+          // Create a simple email body with key information
+          const subject = `Blue Label Distribution Agreement - ${businessName}`;
+          let body = `Blue Label Distribution Agreement for ${businessName}\n\n`;
+          body += `Contact: ${document.querySelector('input[name="contactName"]').value || 'N/A'}\n`;
+          body += `Email: ${email}\n`;
+          body += `Phone: ${document.querySelector('input[name="contactNumber"]').value || 'N/A'}\n\n`;
+          body += "Please find the completed application form attached.\n\n";
+          body += "Note: This email does not contain the actual form data. Please attach the printed PDF version of the form when sending this email.";
+          
+          // Create mailto link
+          let mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          
+          // If user provided an email, include it in the CC field
+          if (email) {
+            mailtoLink += `&cc=${encodeURIComponent(email)}`;
+          }
+          
+          // Show instructions modal
+          const backdrop = document.createElement('div');
+          backdrop.className = 'fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4';
+          
+          const modal = document.createElement('div');
+          modal.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-lg w-full p-6';
+          modal.innerHTML = `
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Email Instructions</h3>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">Please follow these steps to email your form:</p>
+            <ol class="list-decimal pl-5 mb-4 text-gray-700 dark:text-gray-300 space-y-2">
+              <li>First, <strong>print this form</strong> using the Print button to create a PDF.</li>
+              <li>After you click "Continue to Email", your default email client will open with a pre-filled email.</li>
+              <li>Attach the PDF you saved in step 1 to this email.</li>
+              <li>Review the email details and send it to Blue Label Distribution.</li>
+            </ol>
+            <div class="flex justify-end space-x-3 mt-6">
+              <button id="cancelEmailBtn" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-primary">
+                Cancel
+              </button>
+              <button id="continueEmailBtn" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Continue to Email
+              </button>
+            </div>
+          `;
+          
+          // Append modal to backdrop, then to body
+          backdrop.appendChild(modal);
+          document.body.appendChild(backdrop);
+          
+          // Add button functionality
+          document.getElementById('cancelEmailBtn').addEventListener('click', function() {
+            document.body.removeChild(backdrop);
+          });
+          
+          document.getElementById('continueEmailBtn').addEventListener('click', function() {
+            window.location.href = mailtoLink;
+            document.body.removeChild(backdrop);
+          });
+          
+          // Close modal when clicking backdrop
+          backdrop.addEventListener('click', function(e) {
+            if (e.target === backdrop) {
+              document.body.removeChild(backdrop);
+            }
+          });
+        });
+      }
+      
+      // Initialize to step 1
+      updateStep(1);
+    });
+  </script>
+</body>
+</html>
